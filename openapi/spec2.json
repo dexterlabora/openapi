@@ -11,7 +11,8 @@
             "doNotSplitWords": [
                 "NetFlow",
                 "SSIDs",
-                "VLANs"
+                "VLANs",
+                "ACLs"
             ],
             "generateAdvancedDocs": true,
             "generateAsyncCode": true,
