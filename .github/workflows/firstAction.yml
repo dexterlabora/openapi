@@ -27,11 +27,6 @@ jobs:
       run: echo Hello, world!
 
     # Runs a set of commands using the runners shell
-    - name: Run a multi-line script
-      run: |
-        curl --location --request POST 'http://localhost:3000/swagger/diff' \
-        --header 'Content-Type: application/json' \
-        --data-raw '{
-            "oldSpec": "https://raw.githubusercontent.com/meraki/openapi/master/openapi/0.8.0/spec2.json",
-            "newSpec": "https://raw.githubusercontent.com/meraki/openapi/master/openapi/spec2.json"
-        }'
+    - uses: wei/curl@v1
+      with:
+        args: curl --location --request POST 'http://localhost:3000/swagger/diff' --header 'Content-Type: application/json' --data-raw '{"oldSpec": "https://raw.githubusercontent.com/meraki/openapi/master/openapi/0.8.0/spec2.json","newSpec": "https://raw.githubusercontent.com/meraki/openapi/master/openapi/spec2.json"}'
