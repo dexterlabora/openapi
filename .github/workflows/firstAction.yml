@@ -26,8 +26,9 @@ jobs:
     - name: Run a one-line script
       run: echo Hello, world!
 
-    # Runs a set of commands using the runners shell
-    - name: curl
-      uses: enflo/curl-action@master
+    - name: changelog
+      uses: octokit/request-action@v2.x
+      id: create_check_run
       with:
-        curl: --request POST 'https://us-central1-focal-rig-261016.cloudfunctions.net/app/swagger/diff' --header 'Content-Type: application/json' --data-raw '{"oldSpec": "https://raw.githubusercontent.com/meraki/openapi/v0.9.0/openapi/spec2.json","newSpec": "https://raw.githubusercontent.com/meraki/openapi/v1.0.0-beta.0/openapi/spec2.json"}'
+        route: POST https://us-central1-focal-rig-261016.cloudfunctions.net/app/swagger/diff
+        output: '{"oldSpec": "https://raw.githubusercontent.com/meraki/openapi/v0.9.0/openapi/spec2.json","newSpec": "https://raw.githubusercontent.com/meraki/openapi/v1.0.0-beta.0/openapi/spec2.json"}'
