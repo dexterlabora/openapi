@@ -32,3 +32,5 @@ jobs:
       with:
         route: POST https://us-central1-focal-rig-261016.cloudfunctions.net/app/swagger/diff
         output: '{"oldSpec": "https://raw.githubusercontent.com/meraki/openapi/v0.9.0/openapi/spec2.json","newSpec": "https://raw.githubusercontent.com/meraki/openapi/v1.0.0-beta.0/openapi/spec2.json"}'
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
