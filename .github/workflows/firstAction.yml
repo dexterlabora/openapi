@@ -17,7 +17,7 @@ jobs:
     - name: wget
       uses: wei/wget@v1
       with:
-        args: -O changelog.md http://localhost:3000/swagger/diff?markdown
+        args: -O changelog.md https://8985076f23d7.ngrok.io/swagger/diff?markdown
         
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
