@@ -18,10 +18,12 @@ jobs:
     
     - name: checkout
       uses: actions/checkout@v2
-    - name: wget
+    - name: wget latest GA markdown
       uses: wei/wget@v1
       with:
         args: -O changelog.md https://8985076f23d7.ngrok.io/swagger/diff?markdown
+    - name: wget latest Beta markdown
+      uses: wei/wget@v1
       with:
         args: -O changelog-beta.md https://8985076f23d7.ngrok.io/swagger/diff?markdown&latestBeta
     - name: Commit files # commit the output folder
