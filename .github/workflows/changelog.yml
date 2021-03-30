@@ -20,13 +20,13 @@ jobs:
     - name: latest GA markdown
       uses: enflo/curl-action@v1.2
       with:
-        curl: --output changelog.md https://8985076f23d7.ngrok.io/swagger/diff?markdown 
+        curl: --output changelog.md https://us-central1-api-demos-sandbox-f5ns.cloudfunctions.net/meraki-changelog/swagger/diff?markdown 
     
     - name: latest Beta markdown
       uses: enflo/curl-action@v1.2
       with:
       # curl arguments
-        curl: --output changelog-beta.md https://8985076f23d7.ngrok.io/swagger/diff?markdown&latestBeta
+        curl: --output changelog-beta.md https://us-central1-api-demos-sandbox-f5ns.cloudfunctions.net/meraki-changelog/swagger/diff?markdown&latestBeta
    
     - name: Commit files # commit the output folder
       run: |
@@ -40,11 +40,13 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         force: true
       
-    - name: Gets latest created release info
-      id: latest_release_info
-      uses: jossef/action-latest-release-info@v1.1.0
-    - name: Print latest release info
-      run: echo ${{ steps.latest_release_info }} 
+#     - name: Gets latest created release info
+#       id: latest_release_info
+#       uses: jossef/action-latest-release-info@v1.1.0
+#     - name: Print latest release info
+#       run: echo ${{ steps.latest_release_info }} 
+      
+      
       
         
 
