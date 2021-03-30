@@ -24,6 +24,8 @@ jobs:
         args: -O changelog.md https://8985076f23d7.ngrok.io/swagger/diff?markdown
     - name: Commit files # commit the output folder
       run: |
+        git config --local user.email "cguynn@gmail.com"
+        git config --local user.name "dexterlabora"
         git add .
         git commit -m "update changelog"
     - name: Push changes # push the output folder to your repo
