@@ -21,7 +21,7 @@ jobs:
     - name: wget latest GA markdown
       uses: wei/wget@v1
       with:
-        args: -O changelog.md https://8985076f23d7.ngrok.io/swagger/diff?markdown
+        args: -O changelog.md "https://8985076f23d7.ngrok.io/swagger/diff?markdown" 
     - name: Sleep for 30 seconds
       uses: jakejarvis/wait-action@master
       with:
@@ -29,7 +29,7 @@ jobs:
     - name: wget latest Beta markdown
       uses: wei/wget@v1
       with:
-        args: -O changelog-beta.md https://8985076f23d7.ngrok.io/swagger/diff?markdown&latestBeta
+        args: -O changelog-beta.md "https://8985076f23d7.ngrok.io/swagger/diff?markdown&latestBeta" 
     - name: Commit files # commit the output folder
       run: |
         git config --local user.email "cguynn@gmail.com"
