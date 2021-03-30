@@ -19,18 +19,16 @@ jobs:
     - name: checkout
       uses: actions/checkout@v2
     - name: latest GA markdown
-      uses: wei/wget@v1
+      uses: enflo/curl-action@v1.2
       with:
-        args: -O changelog.md "https://8985076f23d7.ngrok.io/swagger/diff?markdown" 
+        args: --output changelog.md https://8985076f23d7.ngrok.io/swagger/diff?markdown 
     
     - name: latest Beta markdown
       uses: enflo/curl-action@v1.2
       with:
       # curl arguments
         curl: --output changelog-beta.md https://8985076f23d7.ngrok.io/swagger/diff?markdown&latestBeta
- 
-
-    
+   
     - name: Commit files # commit the output folder
       run: |
         git config --local user.email "cguynn@gmail.com"
