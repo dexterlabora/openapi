@@ -14,10 +14,23 @@ jobs:
   wget:
     runs-on: ubuntu-latest
     steps:
+   
+    
+    - name: checkout
+      uses: actions/checkout@v2
     - name: wget
       uses: wei/wget@v1
       with:
         args: -O changelog.md https://8985076f23d7.ngrok.io/swagger/diff?markdown
+    - name: Commit files # commit the output folder
+      run: |
+        git add .
+        git commit -m "update changelog"
+    - name: Push changes # push the output folder to your repo
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        force: true
         
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
