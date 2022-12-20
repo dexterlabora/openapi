@@ -18,8 +18,6 @@ jobs:
         git config --local user.name "dexterlabora"
         latest_tag=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" "https://api.github.com/repos/${{ github.repository }}/tags" | jq '.[0].name' -r)
         echo "Latest tag: $latest_tag"
-    - name: Determine next semantic minor version
-      run: |
         # Split the latest tag into major, minor, and patch versions
         IFS='.' read -ra versions <<< "$latest_tag"
         major=${versions[0]}
