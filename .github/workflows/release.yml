@@ -40,3 +40,4 @@ jobs:
         git tag -a "$new_version" -m "Release $new_version"
     - name: Push changes
       run: git push origin master --tags
+
