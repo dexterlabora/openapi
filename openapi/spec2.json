@@ -1,9 +1,9 @@
 {
   "swagger": "2.0",
   "info": {
-    "version": "1.28.0",
+    "version": "v1.29.0",
     "title": "Meraki Dashboard API",
-    "description": "The Cisco Meraki Dashboard API is a modern REST API based on the OpenAPI specification.\n\n> Date: 07 December, 2022\n>\n> [Recent Updates](https://meraki.io/whats-new/)\n\n---\n\n[API Documentation](https://meraki.io/api)\n\n[Community Support](https://meraki.io/community)\n\n[Meraki Homepage](https://www.meraki.com)\n",
+    "description": "The Cisco Meraki Dashboard API is a modern REST API based on the OpenAPI specification.\n\n> Date: 20 December, 2022\n>\n> [Recent Updates](https://meraki.io/whats-new/)\n\n---\n\n[API Documentation](https://meraki.io/api)\n\n[Community Support](https://meraki.io/community)\n\n[Meraki Homepage](https://www.meraki.com)\n",
     "contact": {
       "name": "Meraki Developer Community",
       "url": "https://meraki.io/community"
@@ -29,9 +29,7 @@
   },
   "security": [
     {
-      "meraki_api_key": [
-
-      ]
+      "meraki_api_key": []
     }
   ],
   "paths": {
@@ -2810,9 +2808,7 @@
                           ]
                         },
                         "description": "APN configurations. If empty, the default APN will be used.",
-                        "default": [
-
-                        ]
+                        "default": []
                       }
                     }
                   },
@@ -3310,8 +3306,8 @@
               "application/json": [
                 {
                   "usage": {
-                    "sent": 138.0,
-                    "recv": 61.0
+                    "sent": 138,
+                    "recv": 61
                   },
                   "id": "k74272e",
                   "description": "Miles's phone",
@@ -3572,7 +3568,7 @@
                   "sent": 5,
                   "received": 5,
                   "loss": {
-                    "percentage": 0.0
+                    "percentage": 0
                   },
                   "latencies": {
                     "minimum": 15.8,
@@ -3825,7 +3821,7 @@
                   "sent": 5,
                   "received": 5,
                   "loss": {
-                    "percentage": 0.0
+                    "percentage": 0
                   },
                   "latencies": {
                     "minimum": 15.8,
@@ -3986,8 +3982,8 @@
                 {
                   "startTime": "2018-10-09T22:19:27Z",
                   "endTime": "2018-10-09T22:20:27Z",
-                  "lossPercent": 1.0,
-                  "latencyMs": 43.0,
+                  "lossPercent": 1,
+                  "latencyMs": 43,
                   "goodput": 2567,
                   "jitter": 3.4
                 },
@@ -3997,7 +3993,7 @@
                   "lossPercent": 0.01,
                   "latencyMs": 44.02,
                   "goodput": 7899,
-                  "jitter": 1.0
+                  "jitter": 1
                 }
               ]
             }
@@ -4408,6 +4404,10 @@
                   "flexibleStackingEnabled": {
                     "type": "boolean",
                     "description": "For supported switches (e.g. MS420/MS425), whether or not the port has flexible stacking enabled."
+                  },
+                  "daiTrusted": {
+                    "type": "boolean",
+                    "description": "If true, ARP packets for this port will be considered trusted, and Dynamic ARP Inspection will allow the traffic."
                   }
                 }
               }
@@ -4451,7 +4451,8 @@
                   "stormControlEnabled": true,
                   "adaptivePolicyGroupId": "123",
                   "peerSgtCapable": false,
-                  "flexibleStackingEnabled": true
+                  "flexibleStackingEnabled": true,
+                  "daiTrusted": false
                 }
               ]
             }
@@ -4616,7 +4617,7 @@
                   "trafficInKbps": {
                     "total": 2.2,
                     "sent": 1.2,
-                    "recv": 1.0
+                    "recv": 1
                   },
                   "securePort": {
                     "enabled": true,
@@ -4897,6 +4898,10 @@
                 "flexibleStackingEnabled": {
                   "type": "boolean",
                   "description": "For supported switches (e.g. MS420/MS425), whether or not the port has flexible stacking enabled."
+                },
+                "daiTrusted": {
+                  "type": "boolean",
+                  "description": "If true, ARP packets for this port will be considered trusted, and Dynamic ARP Inspection will allow the traffic."
                 }
               }
             },
@@ -4938,7 +4943,8 @@
                 "stormControlEnabled": true,
                 "adaptivePolicyGroupId": "123",
                 "peerSgtCapable": false,
-                "flexibleStackingEnabled": true
+                "flexibleStackingEnabled": true,
+                "daiTrusted": false
               }
             }
           }
@@ -5092,6 +5098,10 @@
                 "flexibleStackingEnabled": {
                   "type": "boolean",
                   "description": "For supported switches (e.g. MS420/MS425), whether or not the port has flexible stacking enabled."
+                },
+                "daiTrusted": {
+                  "type": "boolean",
+                  "description": "If true, ARP packets for this port will be considered trusted, and Dynamic ARP Inspection will allow the traffic."
                 }
               },
               "example": {
@@ -5126,7 +5136,8 @@
                 "stormControlEnabled": true,
                 "adaptivePolicyGroupId": "123",
                 "peerSgtCapable": false,
-                "flexibleStackingEnabled": true
+                "flexibleStackingEnabled": true,
+                "daiTrusted": false
               }
             }
           }
@@ -5268,6 +5279,10 @@
                 "flexibleStackingEnabled": {
                   "type": "boolean",
                   "description": "For supported switches (e.g. MS420/MS425), whether or not the port has flexible stacking enabled."
+                },
+                "daiTrusted": {
+                  "type": "boolean",
+                  "description": "If true, ARP packets for this port will be considered trusted, and Dynamic ARP Inspection will allow the traffic."
                 }
               }
             },
@@ -5309,7 +5324,8 @@
                 "stormControlEnabled": true,
                 "adaptivePolicyGroupId": "123",
                 "peerSgtCapable": false,
-                "flexibleStackingEnabled": true
+                "flexibleStackingEnabled": true,
+                "daiTrusted": false
               }
             }
           }
@@ -7850,9 +7866,7 @@
                   },
                   "alertData": {
                     "type": "object",
-                    "properties": {
-
-                    },
+                    "properties": {},
                     "description": "relevant data about the event that caused the alert"
                   }
                 }
@@ -8049,9 +8063,7 @@
                       },
                       "filters": {
                         "type": "object",
-                        "properties": {
-
-                        },
+                        "properties": {},
                         "description": "A hash of specific configuration data for the alert. Only filters specific to the alert will be updated."
                       }
                     },
@@ -12030,9 +12042,7 @@
                   "description": "Mandatory DHCP will enforce that clients connecting to this LAN must use the IP address assigned by the DHCP server. Clients who use a static IP address won't be able to associate. Only available on firmware versions 17.0 and above"
                 }
               },
-              "example": {
-
-              }
+              "example": {}
             }
           }
         ],
@@ -12681,12 +12691,8 @@
                 "name": "My route",
                 "subnet": "192.168.1.0/24",
                 "gatewayIp": "1.2.3.5",
-                "fixedIpAssignments": {
-
-                },
-                "reservedIpRanges": [
-
-                ],
+                "fixedIpAssignments": {},
+                "reservedIpRanges": [],
                 "gatewayVlanId": 100
               }
             }
@@ -12801,9 +12807,7 @@
                 },
                 "fixedIpAssignments": {
                   "type": "object",
-                  "properties": {
-
-                  },
+                  "properties": {},
                   "description": "The DHCP fixed IP assignments on the static route. This should be an object that contains mappings from MAC addresses to objects that themselves each contain \"ip\" and \"name\" string fields. See the sample request/response for more details."
                 },
                 "reservedIpRanges": {
@@ -13735,18 +13739,311 @@
           "200": {
             "description": "Successful operation",
             "schema": {
-              "type": "object"
+              "type": "object",
+              "properties": {
+                "activeActiveAutoVpnEnabled": {
+                  "type": "boolean",
+                  "description": "Whether active-active AutoVPN is enabled"
+                },
+                "defaultUplink": {
+                  "type": "string",
+                  "enum": [
+                    "wan1",
+                    "wan2"
+                  ],
+                  "description": "The default uplink. Must be one of: 'wan1' or 'wan2'"
+                },
+                "loadBalancingEnabled": {
+                  "type": "boolean",
+                  "description": "Whether load balancing is enabled"
+                },
+                "failoverAndFailback": {
+                  "type": "object",
+                  "properties": {
+                    "immediate": {
+                      "type": "object",
+                      "properties": {
+                        "enabled": {
+                          "type": "boolean",
+                          "description": "Whether immediate WAN failover and failback is enabled"
+                        }
+                      },
+                      "required": [
+                        "enabled"
+                      ],
+                      "description": "Immediate WAN failover and failback"
+                    }
+                  },
+                  "description": "WAN failover and failback"
+                },
+                "wanTrafficUplinkPreferences": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "trafficFilters": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "custom"
+                              ],
+                              "description": "Traffic filter type. Must be \"custom\""
+                            },
+                            "value": {
+                              "type": "object",
+                              "properties": {
+                                "protocol": {
+                                  "type": "string",
+                                  "enum": [
+                                    "tcp",
+                                    "udp",
+                                    "icmp6",
+                                    "any"
+                                  ],
+                                  "description": "Protocol of 'custom' type traffic filter. Must be one of: 'tcp', 'udp', 'icmp6' or 'any'"
+                                },
+                                "source": {
+                                  "type": "object",
+                                  "properties": {
+                                    "port": {
+                                      "type": "string",
+                                      "description": "E.g.: \"any\", \"0\" (also means \"any\"), \"8080\", \"1-1024\""
+                                    },
+                                    "cidr": {
+                                      "type": "string",
+                                      "description": "CIDR format address (e.g.\"192.168.10.1\", which is the same as \"192.168.10.1/32\"), or \"any\". Cannot be used in combination with the \"vlan\" property"
+                                    },
+                                    "vlan": {
+                                      "type": "integer",
+                                      "description": "VLAN ID of the configured VLAN in the Meraki network. Cannot be used in combination with the \"cidr\" property and is currently only available under a template network."
+                                    },
+                                    "host": {
+                                      "type": "integer",
+                                      "description": "Host ID in the VLAN. Should not exceed the VLAN subnet capacity. Must be used along with the \"vlan\" property and is currently only available under a template network."
+                                    }
+                                  },
+                                  "description": "Source of 'custom' type traffic filter"
+                                },
+                                "destination": {
+                                  "type": "object",
+                                  "properties": {
+                                    "port": {
+                                      "type": "string",
+                                      "description": "E.g.: \"any\", \"0\" (also means \"any\"), \"8080\", \"1-1024\""
+                                    },
+                                    "cidr": {
+                                      "type": "string",
+                                      "description": "CIDR format address (e.g.\"192.168.10.1\", which is the same as \"192.168.10.1/32\"), or \"any\""
+                                    }
+                                  },
+                                  "description": "Destination of 'custom' type traffic filter"
+                                }
+                              },
+                              "required": [
+                                "source",
+                                "destination"
+                              ],
+                              "description": "Value of traffic filter"
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "value"
+                          ]
+                        },
+                        "description": "Traffic filters"
+                      },
+                      "preferredUplink": {
+                        "type": "string",
+                        "enum": [
+                          "wan1",
+                          "wan2"
+                        ],
+                        "description": "Preferred uplink for uplink preference rule. Must be one of: 'wan1' or 'wan2'"
+                      }
+                    },
+                    "required": [
+                      "trafficFilters",
+                      "preferredUplink"
+                    ]
+                  },
+                  "description": "Uplink preference rules for WAN traffic"
+                },
+                "vpnTrafficUplinkPreferences": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "trafficFilters": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "applicationCategory",
+                                "application",
+                                "custom"
+                              ],
+                              "description": "Traffic filter type. Must be one of: 'applicationCategory', 'application' or 'custom'"
+                            },
+                            "value": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "string",
+                                  "description": "ID of 'applicationCategory' or 'application' type traffic filter"
+                                },
+                                "protocol": {
+                                  "type": "string",
+                                  "enum": [
+                                    "tcp",
+                                    "udp",
+                                    "icmp",
+                                    "icmp6",
+                                    "any"
+                                  ],
+                                  "description": "Protocol of 'custom' type traffic filter. Must be one of: 'tcp', 'udp', 'icmp', 'icmp6' or 'any'"
+                                },
+                                "source": {
+                                  "type": "object",
+                                  "properties": {
+                                    "port": {
+                                      "type": "string",
+                                      "description": "E.g.: \"any\", \"0\" (also means \"any\"), \"8080\", \"1-1024\""
+                                    },
+                                    "cidr": {
+                                      "type": "string",
+                                      "description": "CIDR format address (e.g.\"192.168.10.1\", which is the same as \"192.168.10.1/32\"), or \"any\". Cannot be used in combination with the \"vlan\" property"
+                                    },
+                                    "network": {
+                                      "type": "string",
+                                      "description": "Meraki network ID. Currently only available under a template network, and the value should be ID of either same template network, or another template network currently. E.g.: \"L_12345678\"."
+                                    },
+                                    "vlan": {
+                                      "type": "integer",
+                                      "description": "VLAN ID of the configured VLAN in the Meraki network. Cannot be used in combination with the \"cidr\" property and is currently only available under a template network."
+                                    },
+                                    "host": {
+                                      "type": "integer",
+                                      "description": "Host ID in the VLAN. Should not exceed the VLAN subnet capacity. Must be used along with the \"vlan\" property and is currently only available under a template network."
+                                    }
+                                  },
+                                  "description": "Source of 'custom' type traffic filter"
+                                },
+                                "destination": {
+                                  "type": "object",
+                                  "properties": {
+                                    "port": {
+                                      "type": "string",
+                                      "description": "E.g.: \"any\", \"0\" (also means \"any\"), \"8080\", \"1-1024\""
+                                    },
+                                    "cidr": {
+                                      "type": "string",
+                                      "description": "CIDR format address (e.g.\"192.168.10.1\", which is the same as \"192.168.10.1/32\"), or \"any\". Cannot be used in combination with the \"vlan\" or \"fqdn\" property"
+                                    },
+                                    "network": {
+                                      "type": "string",
+                                      "description": "Meraki network ID. Currently only available under a template network, and the value should be ID of either same template network, or another template network currently. E.g.: \"L_12345678\"."
+                                    },
+                                    "vlan": {
+                                      "type": "integer",
+                                      "description": "VLAN ID of the configured VLAN in the Meraki network. Cannot be used in combination with the \"cidr\" or \"fqdn\" property and is currently only available under a template network."
+                                    },
+                                    "host": {
+                                      "type": "integer",
+                                      "description": "Host ID in the VLAN. Should not exceed the VLAN subnet capacity. Must be used along with the \"vlan\" property and is currently only available under a template network."
+                                    },
+                                    "fqdn": {
+                                      "type": "string",
+                                      "description": "FQDN format address. Cannot be used in combination with the \"cidr\" or \"fqdn\" property and is currently only available in the \"destination\" object of the \"vpnTrafficUplinkPreference\" object. E.g.: \"www.google.com\""
+                                    }
+                                  },
+                                  "description": "Destination of 'custom' type traffic filter"
+                                }
+                              },
+                              "description": "Value of traffic filter"
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "value"
+                          ]
+                        },
+                        "description": "Traffic filters"
+                      },
+                      "preferredUplink": {
+                        "type": "string",
+                        "enum": [
+                          "wan1",
+                          "wan2",
+                          "bestForVoIP",
+                          "loadBalancing",
+                          "defaultUplink"
+                        ],
+                        "description": "Preferred uplink for uplink preference rule. Must be one of: 'wan1', 'wan2', 'bestForVoIP', 'loadBalancing' or 'defaultUplink'"
+                      },
+                      "failOverCriterion": {
+                        "type": "string",
+                        "enum": [
+                          "poorPerformance",
+                          "uplinkDown"
+                        ],
+                        "description": "Fail over criterion for uplink preference rule. Must be one of: 'poorPerformance' or 'uplinkDown'"
+                      },
+                      "performanceClass": {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "string",
+                            "enum": [
+                              "builtin",
+                              "custom"
+                            ],
+                            "description": "Type of this performance class. Must be one of: 'builtin' or 'custom'"
+                          },
+                          "builtinPerformanceClassName": {
+                            "type": "string",
+                            "enum": [
+                              "VoIP"
+                            ],
+                            "description": "Name of builtin performance class. Must be present when performanceClass type is 'builtin' and value must be one of: 'VoIP'"
+                          },
+                          "customPerformanceClassId": {
+                            "type": "string",
+                            "description": "ID of created custom performance class, must be present when performanceClass type is \"custom\""
+                          }
+                        },
+                        "required": [
+                          "type"
+                        ],
+                        "description": "Performance class setting for uplink preference rule"
+                      }
+                    },
+                    "required": [
+                      "trafficFilters",
+                      "preferredUplink"
+                    ]
+                  },
+                  "description": "Uplink preference rules for VPN traffic"
+                }
+              }
             },
             "examples": {
               "application/json": {
+                "activeActiveAutoVpnEnabled": true,
+                "defaultUplink": "wan1",
+                "loadBalancingEnabled": true,
                 "failoverAndFailback": {
                   "immediate": {
                     "enabled": true
                   }
                 },
-                "activeActiveAutoVpnEnabled": true,
-                "defaultUplink": "wan1",
-                "loadBalancingEnabled": true,
                 "wanTrafficUplinkPreferences": [
                   {
                     "trafficFilters": [
@@ -13755,26 +14052,8 @@
                         "value": {
                           "protocol": "tcp",
                           "source": {
-                            "port": "any",
-                            "cidr": "192.168.1.0/24"
-                          },
-                          "destination": {
-                            "port": "any",
-                            "cidr": "any"
-                          }
-                        }
-                      }
-                    ],
-                    "preferredUplink": "wan2"
-                  },
-                  {
-                    "trafficFilters": [
-                      {
-                        "type": "custom",
-                        "value": {
-                          "protocol": "tcp",
-                          "source": {
                             "port": "1-1024",
+                            "cidr": "192.168.1.0/24",
                             "vlan": 10,
                             "host": 254
                           },
@@ -13794,148 +14073,31 @@
                       {
                         "type": "applicationCategory",
                         "value": {
-                          "id": "meraki:layer7/category/1"
-                        }
-                      },
-                      {
-                        "type": "application",
-                        "value": {
-                          "id": "meraki:layer7/application/33"
-                        }
-                      },
-                      {
-                        "type": "custom",
-                        "value": {
+                          "id": "meraki:layer7/category/1",
                           "protocol": "tcp",
                           "source": {
                             "port": "any",
-                            "cidr": "192.168.1.0/24"
-                          },
-                          "destination": {
-                            "port": "any",
-                            "cidr": "any"
-                          }
-                        }
-                      },
-                      {
-                        "type": "custom",
-                        "value": {
-                          "protocol": "tcp",
-                          "source": {
-                            "port": "any",
-                            "cidr": "any"
-                          },
-                          "destination": {
-                            "port": "any",
+                            "cidr": "192.168.1.0/24",
                             "network": "L_23456789",
                             "vlan": 20,
                             "host": 200
-                          }
-                        }
-                      },
-                      {
-                        "type": "custom",
-                        "value": {
-                          "protocol": "tcp",
-                          "source": {
-                            "port": "any",
-                            "cidr": "any"
                           },
                           "destination": {
                             "port": "1-1024",
+                            "cidr": "any",
+                            "network": "L_12345678",
+                            "vlan": 10,
+                            "host": 254,
                             "fqdn": "www.google.com"
                           }
                         }
                       }
                     ],
-                    "preferredUplink": "wan2",
+                    "preferredUplink": "bestForVoIP",
                     "failOverCriterion": "poorPerformance",
                     "performanceClass": {
                       "type": "custom",
-                      "customPerformanceClassId": "123456"
-                    }
-                  },
-                  {
-                    "trafficFilters": [
-                      {
-                        "type": "application",
-                        "value": {
-                          "id": "meraki:layer7/application/9"
-                        }
-                      }
-                    ],
-                    "preferredUplink": "defaultUplink"
-                  },
-                  {
-                    "trafficFilters": [
-                      {
-                        "type": "application",
-                        "value": {
-                          "id": "meraki:layer7/application/106"
-                        }
-                      }
-                    ],
-                    "preferredUplink": "bestForVoIP"
-                  },
-                  {
-                    "trafficFilters": [
-                      {
-                        "type": "application",
-                        "value": {
-                          "id": "meraki:layer7/application/107"
-                        }
-                      }
-                    ],
-                    "preferredUplink": "loadBalancing",
-                    "performanceClass": {
-                      "type": "builtin",
-                      "builtinPerformanceClassName": "VoIP"
-                    }
-                  },
-                  {
-                    "trafficFilters": [
-                      {
-                        "type": "application",
-                        "value": {
-                          "id": "meraki:layer7/application/162"
-                        }
-                      }
-                    ],
-                    "preferredUplink": "loadBalancing",
-                    "performanceClass": {
-                      "type": "custom",
-                      "customPerformanceClassId": "123456"
-                    }
-                  },
-                  {
-                    "trafficFilters": [
-                      {
-                        "type": "application",
-                        "value": {
-                          "id": "meraki:layer7/application/168"
-                        }
-                      }
-                    ],
-                    "preferredUplink": "wan2",
-                    "failOverCriterion": "poorPerformance",
-                    "performanceClass": {
-                      "type": "builtin",
-                      "builtinPerformanceClassName": "VoIP"
-                    }
-                  },
-                  {
-                    "trafficFilters": [
-                      {
-                        "type": "application",
-                        "value": {
-                          "id": "meraki:layer7/application/171"
-                        }
-                      }
-                    ],
-                    "preferredUplink": "wan2",
-                    "failOverCriterion": "poorPerformance",
-                    "performanceClass": {
-                      "type": "custom",
+                      "builtinPerformanceClassName": "VoIP",
                       "customPerformanceClassId": "123456"
                     }
                   }
@@ -14261,14 +14423,14 @@
                 }
               },
               "example": {
+                "activeActiveAutoVpnEnabled": true,
+                "defaultUplink": "wan1",
+                "loadBalancingEnabled": true,
                 "failoverAndFailback": {
                   "immediate": {
                     "enabled": true
                   }
                 },
-                "activeActiveAutoVpnEnabled": true,
-                "defaultUplink": "wan1",
-                "loadBalancingEnabled": true,
                 "wanTrafficUplinkPreferences": [
                   {
                     "trafficFilters": [
@@ -14277,26 +14439,8 @@
                         "value": {
                           "protocol": "tcp",
                           "source": {
-                            "port": "any",
-                            "cidr": "192.168.1.0/24"
-                          },
-                          "destination": {
-                            "port": "any",
-                            "cidr": "any"
-                          }
-                        }
-                      }
-                    ],
-                    "preferredUplink": "wan2"
-                  },
-                  {
-                    "trafficFilters": [
-                      {
-                        "type": "custom",
-                        "value": {
-                          "protocol": "tcp",
-                          "source": {
                             "port": "1-1024",
+                            "cidr": "192.168.1.0/24",
                             "vlan": 10,
                             "host": 254
                           },
@@ -14316,148 +14460,31 @@
                       {
                         "type": "applicationCategory",
                         "value": {
-                          "id": "meraki:layer7/category/1"
-                        }
-                      },
-                      {
-                        "type": "application",
-                        "value": {
-                          "id": "meraki:layer7/application/33"
-                        }
-                      },
-                      {
-                        "type": "custom",
-                        "value": {
+                          "id": "meraki:layer7/category/1",
                           "protocol": "tcp",
                           "source": {
                             "port": "any",
-                            "cidr": "192.168.1.0/24"
-                          },
-                          "destination": {
-                            "port": "any",
-                            "cidr": "any"
-                          }
-                        }
-                      },
-                      {
-                        "type": "custom",
-                        "value": {
-                          "protocol": "tcp",
-                          "source": {
-                            "port": "any",
-                            "cidr": "any"
-                          },
-                          "destination": {
-                            "port": "any",
+                            "cidr": "192.168.1.0/24",
                             "network": "L_23456789",
                             "vlan": 20,
                             "host": 200
-                          }
-                        }
-                      },
-                      {
-                        "type": "custom",
-                        "value": {
-                          "protocol": "tcp",
-                          "source": {
-                            "port": "any",
-                            "cidr": "any"
                           },
                           "destination": {
                             "port": "1-1024",
+                            "cidr": "any",
+                            "network": "L_12345678",
+                            "vlan": 10,
+                            "host": 254,
                             "fqdn": "www.google.com"
                           }
                         }
                       }
                     ],
-                    "preferredUplink": "wan2",
+                    "preferredUplink": "bestForVoIP",
                     "failOverCriterion": "poorPerformance",
                     "performanceClass": {
                       "type": "custom",
-                      "customPerformanceClassId": "123456"
-                    }
-                  },
-                  {
-                    "trafficFilters": [
-                      {
-                        "type": "application",
-                        "value": {
-                          "id": "meraki:layer7/application/9"
-                        }
-                      }
-                    ],
-                    "preferredUplink": "defaultUplink"
-                  },
-                  {
-                    "trafficFilters": [
-                      {
-                        "type": "application",
-                        "value": {
-                          "id": "meraki:layer7/application/106"
-                        }
-                      }
-                    ],
-                    "preferredUplink": "bestForVoIP"
-                  },
-                  {
-                    "trafficFilters": [
-                      {
-                        "type": "application",
-                        "value": {
-                          "id": "meraki:layer7/application/107"
-                        }
-                      }
-                    ],
-                    "preferredUplink": "loadBalancing",
-                    "performanceClass": {
-                      "type": "builtin",
-                      "builtinPerformanceClassName": "VoIP"
-                    }
-                  },
-                  {
-                    "trafficFilters": [
-                      {
-                        "type": "application",
-                        "value": {
-                          "id": "meraki:layer7/application/162"
-                        }
-                      }
-                    ],
-                    "preferredUplink": "loadBalancing",
-                    "performanceClass": {
-                      "type": "custom",
-                      "customPerformanceClassId": "123456"
-                    }
-                  },
-                  {
-                    "trafficFilters": [
-                      {
-                        "type": "application",
-                        "value": {
-                          "id": "meraki:layer7/application/168"
-                        }
-                      }
-                    ],
-                    "preferredUplink": "wan2",
-                    "failOverCriterion": "poorPerformance",
-                    "performanceClass": {
-                      "type": "builtin",
-                      "builtinPerformanceClassName": "VoIP"
-                    }
-                  },
-                  {
-                    "trafficFilters": [
-                      {
-                        "type": "application",
-                        "value": {
-                          "id": "meraki:layer7/application/171"
-                        }
-                      }
-                    ],
-                    "preferredUplink": "wan2",
-                    "failOverCriterion": "poorPerformance",
-                    "performanceClass": {
-                      "type": "custom",
+                      "builtinPerformanceClassName": "VoIP",
                       "customPerformanceClassId": "123456"
                     }
                   }
@@ -14470,18 +14497,311 @@
           "200": {
             "description": "Successful operation",
             "schema": {
-              "type": "object"
+              "type": "object",
+              "properties": {
+                "activeActiveAutoVpnEnabled": {
+                  "type": "boolean",
+                  "description": "Whether active-active AutoVPN is enabled"
+                },
+                "defaultUplink": {
+                  "type": "string",
+                  "enum": [
+                    "wan1",
+                    "wan2"
+                  ],
+                  "description": "The default uplink. Must be one of: 'wan1' or 'wan2'"
+                },
+                "loadBalancingEnabled": {
+                  "type": "boolean",
+                  "description": "Whether load balancing is enabled"
+                },
+                "failoverAndFailback": {
+                  "type": "object",
+                  "properties": {
+                    "immediate": {
+                      "type": "object",
+                      "properties": {
+                        "enabled": {
+                          "type": "boolean",
+                          "description": "Whether immediate WAN failover and failback is enabled"
+                        }
+                      },
+                      "required": [
+                        "enabled"
+                      ],
+                      "description": "Immediate WAN failover and failback"
+                    }
+                  },
+                  "description": "WAN failover and failback"
+                },
+                "wanTrafficUplinkPreferences": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "trafficFilters": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "custom"
+                              ],
+                              "description": "Traffic filter type. Must be \"custom\""
+                            },
+                            "value": {
+                              "type": "object",
+                              "properties": {
+                                "protocol": {
+                                  "type": "string",
+                                  "enum": [
+                                    "tcp",
+                                    "udp",
+                                    "icmp6",
+                                    "any"
+                                  ],
+                                  "description": "Protocol of 'custom' type traffic filter. Must be one of: 'tcp', 'udp', 'icmp6' or 'any'"
+                                },
+                                "source": {
+                                  "type": "object",
+                                  "properties": {
+                                    "port": {
+                                      "type": "string",
+                                      "description": "E.g.: \"any\", \"0\" (also means \"any\"), \"8080\", \"1-1024\""
+                                    },
+                                    "cidr": {
+                                      "type": "string",
+                                      "description": "CIDR format address (e.g.\"192.168.10.1\", which is the same as \"192.168.10.1/32\"), or \"any\". Cannot be used in combination with the \"vlan\" property"
+                                    },
+                                    "vlan": {
+                                      "type": "integer",
+                                      "description": "VLAN ID of the configured VLAN in the Meraki network. Cannot be used in combination with the \"cidr\" property and is currently only available under a template network."
+                                    },
+                                    "host": {
+                                      "type": "integer",
+                                      "description": "Host ID in the VLAN. Should not exceed the VLAN subnet capacity. Must be used along with the \"vlan\" property and is currently only available under a template network."
+                                    }
+                                  },
+                                  "description": "Source of 'custom' type traffic filter"
+                                },
+                                "destination": {
+                                  "type": "object",
+                                  "properties": {
+                                    "port": {
+                                      "type": "string",
+                                      "description": "E.g.: \"any\", \"0\" (also means \"any\"), \"8080\", \"1-1024\""
+                                    },
+                                    "cidr": {
+                                      "type": "string",
+                                      "description": "CIDR format address (e.g.\"192.168.10.1\", which is the same as \"192.168.10.1/32\"), or \"any\""
+                                    }
+                                  },
+                                  "description": "Destination of 'custom' type traffic filter"
+                                }
+                              },
+                              "required": [
+                                "source",
+                                "destination"
+                              ],
+                              "description": "Value of traffic filter"
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "value"
+                          ]
+                        },
+                        "description": "Traffic filters"
+                      },
+                      "preferredUplink": {
+                        "type": "string",
+                        "enum": [
+                          "wan1",
+                          "wan2"
+                        ],
+                        "description": "Preferred uplink for uplink preference rule. Must be one of: 'wan1' or 'wan2'"
+                      }
+                    },
+                    "required": [
+                      "trafficFilters",
+                      "preferredUplink"
+                    ]
+                  },
+                  "description": "Uplink preference rules for WAN traffic"
+                },
+                "vpnTrafficUplinkPreferences": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "trafficFilters": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "applicationCategory",
+                                "application",
+                                "custom"
+                              ],
+                              "description": "Traffic filter type. Must be one of: 'applicationCategory', 'application' or 'custom'"
+                            },
+                            "value": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "string",
+                                  "description": "ID of 'applicationCategory' or 'application' type traffic filter"
+                                },
+                                "protocol": {
+                                  "type": "string",
+                                  "enum": [
+                                    "tcp",
+                                    "udp",
+                                    "icmp",
+                                    "icmp6",
+                                    "any"
+                                  ],
+                                  "description": "Protocol of 'custom' type traffic filter. Must be one of: 'tcp', 'udp', 'icmp', 'icmp6' or 'any'"
+                                },
+                                "source": {
+                                  "type": "object",
+                                  "properties": {
+                                    "port": {
+                                      "type": "string",
+                                      "description": "E.g.: \"any\", \"0\" (also means \"any\"), \"8080\", \"1-1024\""
+                                    },
+                                    "cidr": {
+                                      "type": "string",
+                                      "description": "CIDR format address (e.g.\"192.168.10.1\", which is the same as \"192.168.10.1/32\"), or \"any\". Cannot be used in combination with the \"vlan\" property"
+                                    },
+                                    "network": {
+                                      "type": "string",
+                                      "description": "Meraki network ID. Currently only available under a template network, and the value should be ID of either same template network, or another template network currently. E.g.: \"L_12345678\"."
+                                    },
+                                    "vlan": {
+                                      "type": "integer",
+                                      "description": "VLAN ID of the configured VLAN in the Meraki network. Cannot be used in combination with the \"cidr\" property and is currently only available under a template network."
+                                    },
+                                    "host": {
+                                      "type": "integer",
+                                      "description": "Host ID in the VLAN. Should not exceed the VLAN subnet capacity. Must be used along with the \"vlan\" property and is currently only available under a template network."
+                                    }
+                                  },
+                                  "description": "Source of 'custom' type traffic filter"
+                                },
+                                "destination": {
+                                  "type": "object",
+                                  "properties": {
+                                    "port": {
+                                      "type": "string",
+                                      "description": "E.g.: \"any\", \"0\" (also means \"any\"), \"8080\", \"1-1024\""
+                                    },
+                                    "cidr": {
+                                      "type": "string",
+                                      "description": "CIDR format address (e.g.\"192.168.10.1\", which is the same as \"192.168.10.1/32\"), or \"any\". Cannot be used in combination with the \"vlan\" or \"fqdn\" property"
+                                    },
+                                    "network": {
+                                      "type": "string",
+                                      "description": "Meraki network ID. Currently only available under a template network, and the value should be ID of either same template network, or another template network currently. E.g.: \"L_12345678\"."
+                                    },
+                                    "vlan": {
+                                      "type": "integer",
+                                      "description": "VLAN ID of the configured VLAN in the Meraki network. Cannot be used in combination with the \"cidr\" or \"fqdn\" property and is currently only available under a template network."
+                                    },
+                                    "host": {
+                                      "type": "integer",
+                                      "description": "Host ID in the VLAN. Should not exceed the VLAN subnet capacity. Must be used along with the \"vlan\" property and is currently only available under a template network."
+                                    },
+                                    "fqdn": {
+                                      "type": "string",
+                                      "description": "FQDN format address. Cannot be used in combination with the \"cidr\" or \"fqdn\" property and is currently only available in the \"destination\" object of the \"vpnTrafficUplinkPreference\" object. E.g.: \"www.google.com\""
+                                    }
+                                  },
+                                  "description": "Destination of 'custom' type traffic filter"
+                                }
+                              },
+                              "description": "Value of traffic filter"
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "value"
+                          ]
+                        },
+                        "description": "Traffic filters"
+                      },
+                      "preferredUplink": {
+                        "type": "string",
+                        "enum": [
+                          "wan1",
+                          "wan2",
+                          "bestForVoIP",
+                          "loadBalancing",
+                          "defaultUplink"
+                        ],
+                        "description": "Preferred uplink for uplink preference rule. Must be one of: 'wan1', 'wan2', 'bestForVoIP', 'loadBalancing' or 'defaultUplink'"
+                      },
+                      "failOverCriterion": {
+                        "type": "string",
+                        "enum": [
+                          "poorPerformance",
+                          "uplinkDown"
+                        ],
+                        "description": "Fail over criterion for uplink preference rule. Must be one of: 'poorPerformance' or 'uplinkDown'"
+                      },
+                      "performanceClass": {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "string",
+                            "enum": [
+                              "builtin",
+                              "custom"
+                            ],
+                            "description": "Type of this performance class. Must be one of: 'builtin' or 'custom'"
+                          },
+                          "builtinPerformanceClassName": {
+                            "type": "string",
+                            "enum": [
+                              "VoIP"
+                            ],
+                            "description": "Name of builtin performance class. Must be present when performanceClass type is 'builtin' and value must be one of: 'VoIP'"
+                          },
+                          "customPerformanceClassId": {
+                            "type": "string",
+                            "description": "ID of created custom performance class, must be present when performanceClass type is \"custom\""
+                          }
+                        },
+                        "required": [
+                          "type"
+                        ],
+                        "description": "Performance class setting for uplink preference rule"
+                      }
+                    },
+                    "required": [
+                      "trafficFilters",
+                      "preferredUplink"
+                    ]
+                  },
+                  "description": "Uplink preference rules for VPN traffic"
+                }
+              }
             },
             "examples": {
               "application/json": {
+                "activeActiveAutoVpnEnabled": true,
+                "defaultUplink": "wan1",
+                "loadBalancingEnabled": true,
                 "failoverAndFailback": {
                   "immediate": {
                     "enabled": true
                   }
                 },
-                "activeActiveAutoVpnEnabled": true,
-                "defaultUplink": "wan1",
-                "loadBalancingEnabled": true,
                 "wanTrafficUplinkPreferences": [
                   {
                     "trafficFilters": [
@@ -14490,26 +14810,8 @@
                         "value": {
                           "protocol": "tcp",
                           "source": {
-                            "port": "any",
-                            "cidr": "192.168.1.0/24"
-                          },
-                          "destination": {
-                            "port": "any",
-                            "cidr": "any"
-                          }
-                        }
-                      }
-                    ],
-                    "preferredUplink": "wan2"
-                  },
-                  {
-                    "trafficFilters": [
-                      {
-                        "type": "custom",
-                        "value": {
-                          "protocol": "tcp",
-                          "source": {
                             "port": "1-1024",
+                            "cidr": "192.168.1.0/24",
                             "vlan": 10,
                             "host": 254
                           },
@@ -14529,148 +14831,31 @@
                       {
                         "type": "applicationCategory",
                         "value": {
-                          "id": "meraki:layer7/category/1"
-                        }
-                      },
-                      {
-                        "type": "application",
-                        "value": {
-                          "id": "meraki:layer7/application/33"
-                        }
-                      },
-                      {
-                        "type": "custom",
-                        "value": {
+                          "id": "meraki:layer7/category/1",
                           "protocol": "tcp",
                           "source": {
                             "port": "any",
-                            "cidr": "192.168.1.0/24"
-                          },
-                          "destination": {
-                            "port": "any",
-                            "cidr": "any"
-                          }
-                        }
-                      },
-                      {
-                        "type": "custom",
-                        "value": {
-                          "protocol": "tcp",
-                          "source": {
-                            "port": "any",
-                            "cidr": "any"
-                          },
-                          "destination": {
-                            "port": "any",
+                            "cidr": "192.168.1.0/24",
                             "network": "L_23456789",
                             "vlan": 20,
                             "host": 200
-                          }
-                        }
-                      },
-                      {
-                        "type": "custom",
-                        "value": {
-                          "protocol": "tcp",
-                          "source": {
-                            "port": "any",
-                            "cidr": "any"
                           },
                           "destination": {
                             "port": "1-1024",
+                            "cidr": "any",
+                            "network": "L_12345678",
+                            "vlan": 10,
+                            "host": 254,
                             "fqdn": "www.google.com"
                           }
                         }
                       }
                     ],
-                    "preferredUplink": "wan2",
+                    "preferredUplink": "bestForVoIP",
                     "failOverCriterion": "poorPerformance",
                     "performanceClass": {
                       "type": "custom",
-                      "customPerformanceClassId": "123456"
-                    }
-                  },
-                  {
-                    "trafficFilters": [
-                      {
-                        "type": "application",
-                        "value": {
-                          "id": "meraki:layer7/application/9"
-                        }
-                      }
-                    ],
-                    "preferredUplink": "defaultUplink"
-                  },
-                  {
-                    "trafficFilters": [
-                      {
-                        "type": "application",
-                        "value": {
-                          "id": "meraki:layer7/application/106"
-                        }
-                      }
-                    ],
-                    "preferredUplink": "bestForVoIP"
-                  },
-                  {
-                    "trafficFilters": [
-                      {
-                        "type": "application",
-                        "value": {
-                          "id": "meraki:layer7/application/107"
-                        }
-                      }
-                    ],
-                    "preferredUplink": "loadBalancing",
-                    "performanceClass": {
-                      "type": "builtin",
-                      "builtinPerformanceClassName": "VoIP"
-                    }
-                  },
-                  {
-                    "trafficFilters": [
-                      {
-                        "type": "application",
-                        "value": {
-                          "id": "meraki:layer7/application/162"
-                        }
-                      }
-                    ],
-                    "preferredUplink": "loadBalancing",
-                    "performanceClass": {
-                      "type": "custom",
-                      "customPerformanceClassId": "123456"
-                    }
-                  },
-                  {
-                    "trafficFilters": [
-                      {
-                        "type": "application",
-                        "value": {
-                          "id": "meraki:layer7/application/168"
-                        }
-                      }
-                    ],
-                    "preferredUplink": "wan2",
-                    "failOverCriterion": "poorPerformance",
-                    "performanceClass": {
-                      "type": "builtin",
-                      "builtinPerformanceClassName": "VoIP"
-                    }
-                  },
-                  {
-                    "trafficFilters": [
-                      {
-                        "type": "application",
-                        "value": {
-                          "id": "meraki:layer7/application/171"
-                        }
-                      }
-                    ],
-                    "preferredUplink": "wan2",
-                    "failOverCriterion": "poorPerformance",
-                    "performanceClass": {
-                      "type": "custom",
+                      "builtinPerformanceClassName": "VoIP",
                       "customPerformanceClassId": "123456"
                     }
                   }
@@ -14884,9 +15069,7 @@
                   },
                   "fixedIpAssignments": {
                     "type": "object",
-                    "properties": {
-
-                    },
+                    "properties": {},
                     "description": "The DHCP fixed IP assignments on the VLAN. This should be an object that contains mappings from MAC addresses to objects that themselves each contain \"ip\" and \"name\" string fields. See the sample request/response for more details."
                   },
                   "reservedIpRanges": {
@@ -15559,9 +15742,7 @@
                 },
                 "fixedIpAssignments": {
                   "type": "object",
-                  "properties": {
-
-                  },
+                  "properties": {},
                   "description": "The DHCP fixed IP assignments on the VLAN. This should be an object that contains mappings from MAC addresses to objects that themselves each contain \"ip\" and \"name\" string fields. See the sample request/response for more details."
                 },
                 "reservedIpRanges": {
@@ -15839,9 +16020,7 @@
                 },
                 "fixedIpAssignments": {
                   "type": "object",
-                  "properties": {
-
-                  },
+                  "properties": {},
                   "description": "The DHCP fixed IP assignments on the VLAN. This should be an object that contains mappings from MAC addresses to objects that themselves each contain \"ip\" and \"name\" string fields. See the sample request/response for more details."
                 },
                 "reservedIpRanges": {
@@ -16139,9 +16318,7 @@
                 },
                 "fixedIpAssignments": {
                   "type": "object",
-                  "properties": {
-
-                  },
+                  "properties": {},
                   "description": "The DHCP fixed IP assignments on the VLAN. This should be an object that contains mappings from MAC addresses to objects that themselves each contain \"ip\" and \"name\" string fields. See the sample request/response for more details."
                 },
                 "reservedIpRanges": {
@@ -16446,6 +16623,19 @@
                       "ip": {
                         "type": "string",
                         "description": "The IPv4 address of the neighbor"
+                      },
+                      "ipv6": {
+                        "type": "object",
+                        "properties": {
+                          "address": {
+                            "type": "string",
+                            "description": "The IPv6 address of the neighbor."
+                          }
+                        },
+                        "required": [
+                          "address"
+                        ],
+                        "description": "Information regarding IPv6 address of the neighbor, Required if `ip` is not present."
                       },
                       "remoteAsNumber": {
                         "type": "integer",
@@ -18032,9 +18222,7 @@
                   "description": "Video quality and resolution settings for all the camera models."
                 }
               },
-              "example": {
-
-              }
+              "example": {}
             }
           }
         ],
@@ -18431,9 +18619,7 @@
                   "description": "The identity of the wireless profile. Required for creating wireless profiles in 8021x-radius auth mode."
                 }
               },
-              "example": {
-
-              }
+              "example": {}
             }
           }
         ],
@@ -18998,9 +19184,7 @@
                   "description": "The bandwidth settings for the 'cellular' uplink"
                 }
               },
-              "example": {
-
-              }
+              "example": {}
             }
           }
         ],
@@ -19158,8 +19342,8 @@
               "application/json": [
                 {
                   "usage": {
-                    "sent": 138.0,
-                    "recv": 61.0
+                    "sent": 138,
+                    "recv": 61
                   },
                   "id": "k74272e",
                   "description": "Miles's phone",
@@ -26515,7 +26699,7 @@
                       "floorPlanId": "g_1234567"
                     }
                   ],
-                  "width": 100.0,
+                  "width": 100,
                   "height": 150.1,
                   "center": {
                     "lat": 37.770040510499996,
@@ -26705,7 +26889,7 @@
                     "floorPlanId": "g_1234567"
                   }
                 ],
-                "width": 100.0,
+                "width": 100,
                 "height": 150.1,
                 "center": {
                   "lat": 37.770040510499996,
@@ -26795,7 +26979,7 @@
                     "floorPlanId": "g_1234567"
                   }
                 ],
-                "width": 100.0,
+                "width": 100,
                 "height": 150.1,
                 "center": {
                   "lat": 37.770040510499996,
@@ -26940,9 +27124,7 @@
                   "description": "The file contents (a base 64 encoded string) of your new image. Supported formats are PNG, GIF, and JPG. Note that all images are saved as PNG files, regardless of the format they are uploaded in. If you upload a new image, and you do NOT specify any new geolocation fields ('center, 'topLeftCorner', etc), the floor plan will be recentered with no rotation in order to maintain the aspect ratio of your new image."
                 }
               },
-              "example": {
-
-              }
+              "example": {}
             }
           }
         ],
@@ -26984,7 +27166,7 @@
                     "floorPlanId": "g_1234567"
                   }
                 ],
-                "width": 100.0,
+                "width": 100,
                 "height": 150.1,
                 "center": {
                   "lat": 37.770040510499996,
@@ -27194,9 +27376,7 @@
                   "contentFiltering": {
                     "allowedUrlPatterns": {
                       "settings": "network default",
-                      "patterns": [
-
-                      ]
+                      "patterns": []
                     },
                     "blockedUrlPatterns": {
                       "settings": "append",
@@ -27863,9 +28043,7 @@
                 "contentFiltering": {
                   "allowedUrlPatterns": {
                     "settings": "network default",
-                    "patterns": [
-
-                    ]
+                    "patterns": []
                   },
                   "blockedUrlPatterns": {
                     "settings": "append",
@@ -28038,9 +28216,7 @@
                 "contentFiltering": {
                   "allowedUrlPatterns": {
                     "settings": "network default",
-                    "patterns": [
-
-                    ]
+                    "patterns": []
                   },
                   "blockedUrlPatterns": {
                     "settings": "append",
@@ -28235,9 +28411,7 @@
                 "contentFiltering": {
                   "allowedUrlPatterns": {
                     "settings": "network default",
-                    "patterns": [
-
-                    ]
+                    "patterns": []
                   },
                   "blockedUrlPatterns": {
                     "settings": "append",
@@ -28909,9 +29083,7 @@
                 "contentFiltering": {
                   "allowedUrlPatterns": {
                     "settings": "network default",
-                    "patterns": [
-
-                    ]
+                    "patterns": []
                   },
                   "blockedUrlPatterns": {
                     "settings": "append",
@@ -29080,9 +29252,7 @@
                 "contentFiltering": {
                   "allowedUrlPatterns": {
                     "settings": "network default",
-                    "patterns": [
-
-                    ]
+                    "patterns": []
                   },
                   "blockedUrlPatterns": {
                     "settings": "append",
@@ -29476,7 +29646,7 @@
                   "wanLatencyMs": 10.1,
                   "lanLatencyMs": 3.2,
                   "wanLossPercent": 0.2,
-                  "lanLossPercent": 0.0,
+                  "lanLossPercent": 0,
                   "responseDuration": 210,
                   "sent": 1000,
                   "recv": 5000,
@@ -30186,9 +30356,7 @@
                 },
                 "authentication": {
                   "type": "object",
-                  "properties": {
-
-                  },
+                  "properties": {},
                   "description": "Authentication settings of the MQTT broker"
                 }
               },
@@ -30361,9 +30529,7 @@
                 },
                 "authentication": {
                   "type": "object",
-                  "properties": {
-
-                  },
+                  "properties": {},
                   "description": "Authentication settings of the MQTT broker"
                 }
               },
@@ -31827,7 +31993,7 @@
                       "threshold": {
                         "temperature": {
                           "celsius": 20.5,
-                          "fahrenheit": 70.0,
+                          "fahrenheit": 70,
                           "quality": "good"
                         },
                         "humidity": {
@@ -32177,7 +32343,7 @@
                     "threshold": {
                       "temperature": {
                         "celsius": 20.5,
-                        "fahrenheit": 70.0,
+                        "fahrenheit": 70,
                         "quality": "good"
                       },
                       "humidity": {
@@ -32528,7 +32694,7 @@
                     "threshold": {
                       "temperature": {
                         "celsius": 20.5,
-                        "fahrenheit": 70.0,
+                        "fahrenheit": 70,
                         "quality": "good"
                       },
                       "humidity": {
@@ -32901,7 +33067,7 @@
                     "threshold": {
                       "temperature": {
                         "celsius": 20.5,
-                        "fahrenheit": 70.0,
+                        "fahrenheit": 70,
                         "quality": "good"
                       },
                       "humidity": {
@@ -33256,7 +33422,7 @@
                     "threshold": {
                       "temperature": {
                         "celsius": 20.5,
-                        "fahrenheit": 70.0,
+                        "fahrenheit": 70,
                         "quality": "good"
                       },
                       "humidity": {
@@ -33602,7 +33768,7 @@
                     "threshold": {
                       "temperature": {
                         "celsius": 20.5,
-                        "fahrenheit": 70.0,
+                        "fahrenheit": 70,
                         "quality": "good"
                       },
                       "humidity": {
@@ -34065,9 +34231,7 @@
               "application/json": {
                 "id": "1234",
                 "status": "pending",
-                "data": {
-
-                }
+                "data": {}
               }
             }
           }
@@ -34996,8 +35160,8 @@
             "examples": {
               "application/json": [
                 {
-                  "received": 61.0,
-                  "sent": 138.0,
+                  "received": 61,
+                  "sent": 138,
                   "ts": "2018-05-12T00:00:00Z"
                 }
               ]
@@ -36921,18 +37085,10 @@
                   "username": "",
                   "hasPassword": false,
                   "tags": " tag1 tag2 ",
-                  "adGroups": [
-
-                  ],
-                  "azureAdGroups": [
-
-                  ],
-                  "samlGroups": [
-
-                  ],
-                  "asmGroups": [
-
-                  ],
+                  "adGroups": [],
+                  "azureAdGroups": [],
+                  "samlGroups": [],
+                  "asmGroups": [],
                   "isExternal": false,
                   "displayName": "Miles Meraki <miles@meraki.com>",
                   "hasIdentityCertificate": false,
@@ -42801,7 +42957,39 @@
           "200": {
             "description": "Successful operation",
             "schema": {
-              "type": "object"
+              "type": "object",
+              "properties": {
+                "vlan": {
+                  "type": "integer",
+                  "description": "Management VLAN"
+                },
+                "useCombinedPower": {
+                  "type": "boolean",
+                  "description": "The use Combined Power as the default behavior of secondary power supplies on supported devices."
+                },
+                "powerExceptions": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "serial": {
+                        "type": "string",
+                        "description": "Serial number of the switch"
+                      },
+                      "powerType": {
+                        "type": "string",
+                        "enum": [
+                          "combined",
+                          "redundant",
+                          "useNetworkSetting"
+                        ],
+                        "description": "Per switch exception (combined, redundant, useNetworkSetting)"
+                      }
+                    }
+                  },
+                  "description": "Exceptions on a per switch basis to \"useCombinedPower\""
+                }
+              }
             },
             "examples": {
               "application/json": {
@@ -42811,18 +42999,6 @@
                   {
                     "serial": "Q234-ABCD-0001",
                     "powerType": "redundant"
-                  },
-                  {
-                    "serial": "Q234-ABCD-0002",
-                    "powerType": "combined"
-                  },
-                  {
-                    "serial": "Q234-ABCD-0003",
-                    "powerType": "redundant"
-                  },
-                  {
-                    "serial": "Q234-ABCD-0004",
-                    "powerType": "useNetworkSetting"
                   }
                 ]
               }
@@ -42887,28 +43063,7 @@
                   "description": "Exceptions on a per switch basis to \"useCombinedPower\""
                 }
               },
-              "example": {
-                "vlan": 100,
-                "useCombinedPower": false,
-                "powerExceptions": [
-                  {
-                    "serial": "Q234-ABCD-0001",
-                    "powerType": "redundant"
-                  },
-                  {
-                    "serial": "Q234-ABCD-0002",
-                    "powerType": "combined"
-                  },
-                  {
-                    "serial": "Q234-ABCD-0003",
-                    "powerType": "redundant"
-                  },
-                  {
-                    "serial": "Q234-ABCD-0004",
-                    "powerType": "useNetworkSetting"
-                  }
-                ]
-              }
+              "example": {}
             }
           }
         ],
@@ -42916,7 +43071,39 @@
           "200": {
             "description": "Successful operation",
             "schema": {
-              "type": "object"
+              "type": "object",
+              "properties": {
+                "vlan": {
+                  "type": "integer",
+                  "description": "Management VLAN"
+                },
+                "useCombinedPower": {
+                  "type": "boolean",
+                  "description": "The use Combined Power as the default behavior of secondary power supplies on supported devices."
+                },
+                "powerExceptions": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "serial": {
+                        "type": "string",
+                        "description": "Serial number of the switch"
+                      },
+                      "powerType": {
+                        "type": "string",
+                        "enum": [
+                          "combined",
+                          "redundant",
+                          "useNetworkSetting"
+                        ],
+                        "description": "Per switch exception (combined, redundant, useNetworkSetting)"
+                      }
+                    }
+                  },
+                  "description": "Exceptions on a per switch basis to \"useCombinedPower\""
+                }
+              }
             },
             "examples": {
               "application/json": {
@@ -42926,18 +43113,6 @@
                   {
                     "serial": "Q234-ABCD-0001",
                     "powerType": "redundant"
-                  },
-                  {
-                    "serial": "Q234-ABCD-0002",
-                    "powerType": "combined"
-                  },
-                  {
-                    "serial": "Q234-ABCD-0003",
-                    "powerType": "redundant"
-                  },
-                  {
-                    "serial": "Q234-ABCD-0004",
-                    "powerType": "useNetworkSetting"
                   }
                 ]
               }
@@ -45116,8 +45291,8 @@
                   "destination": null,
                   "protocol": "TCP",
                   "port": 443,
-                  "sent": 138.0,
-                  "recv": 61.0,
+                  "sent": 138,
+                  "recv": 61,
                   "numClients": 7,
                   "activeTime": 77000,
                   "flows": 300
@@ -49909,7 +50084,7 @@
                 "twoFourGhzSettings": {
                   "maxPower": 30,
                   "minPower": 5,
-                  "minBitrate": 11.0,
+                  "minBitrate": 11,
                   "validAutoChannels": [
                     1,
                     6,
@@ -49957,77 +50132,77 @@
                 },
                 "perSsidSettings": {
                   "0": {
-                    "minBitrate": 11.0,
+                    "minBitrate": 11,
                     "bandOperationMode": "dual",
                     "bandSteeringEnabled": true
                   },
                   "1": {
-                    "minBitrate": 11.0,
+                    "minBitrate": 11,
                     "bandOperationMode": "dual",
                     "bandSteeringEnabled": true
                   },
                   "2": {
-                    "minBitrate": 11.0,
+                    "minBitrate": 11,
                     "bandOperationMode": "dual",
                     "bandSteeringEnabled": true
                   },
                   "3": {
-                    "minBitrate": 11.0,
+                    "minBitrate": 11,
                     "bandOperationMode": "dual",
                     "bandSteeringEnabled": true
                   },
                   "4": {
-                    "minBitrate": 11.0,
+                    "minBitrate": 11,
                     "bandOperationMode": "dual",
                     "bandSteeringEnabled": true
                   },
                   "5": {
-                    "minBitrate": 11.0,
+                    "minBitrate": 11,
                     "bandOperationMode": "dual",
                     "bandSteeringEnabled": true
                   },
                   "6": {
-                    "minBitrate": 11.0,
+                    "minBitrate": 11,
                     "bandOperationMode": "dual",
                     "bandSteeringEnabled": true
                   },
                   "7": {
-                    "minBitrate": 11.0,
+                    "minBitrate": 11,
                     "bandOperationMode": "dual",
                     "bandSteeringEnabled": true
                   },
                   "8": {
-                    "minBitrate": 11.0,
+                    "minBitrate": 11,
                     "bandOperationMode": "dual",
                     "bandSteeringEnabled": true
                   },
                   "9": {
-                    "minBitrate": 11.0,
+                    "minBitrate": 11,
                     "bandOperationMode": "dual",
                     "bandSteeringEnabled": true
                   },
                   "10": {
-                    "minBitrate": 11.0,
+                    "minBitrate": 11,
                     "bandOperationMode": "dual",
                     "bandSteeringEnabled": true
                   },
                   "11": {
-                    "minBitrate": 11.0,
+                    "minBitrate": 11,
                     "bandOperationMode": "dual",
                     "bandSteeringEnabled": true
                   },
                   "12": {
-                    "minBitrate": 11.0,
+                    "minBitrate": 11,
                     "bandOperationMode": "dual",
                     "bandSteeringEnabled": true
                   },
                   "13": {
-                    "minBitrate": 11.0,
+                    "minBitrate": 11,
                     "bandOperationMode": "dual",
                     "bandSteeringEnabled": true
                   },
                   "14": {
-                    "minBitrate": 11.0,
+                    "minBitrate": 11,
                     "bandOperationMode": "dual",
                     "bandSteeringEnabled": true
                   }
@@ -50590,7 +50765,7 @@
                 "twoFourGhzSettings": {
                   "maxPower": 30,
                   "minPower": 5,
-                  "minBitrate": 11.0,
+                  "minBitrate": 11,
                   "validAutoChannels": [
                     1,
                     6,
@@ -51262,7 +51437,7 @@
                 "twoFourGhzSettings": {
                   "maxPower": 30,
                   "minPower": 5,
-                  "minBitrate": 11.0,
+                  "minBitrate": 11,
                   "validAutoChannels": [
                     1,
                     6,
@@ -51310,77 +51485,77 @@
                 },
                 "perSsidSettings": {
                   "0": {
-                    "minBitrate": 11.0,
+                    "minBitrate": 11,
                     "bandOperationMode": "dual",
                     "bandSteeringEnabled": true
                   },
                   "1": {
-                    "minBitrate": 11.0,
+                    "minBitrate": 11,
                     "bandOperationMode": "dual",
                     "bandSteeringEnabled": true
                   },
                   "2": {
-                    "minBitrate": 11.0,
+                    "minBitrate": 11,
                     "bandOperationMode": "dual",
                     "bandSteeringEnabled": true
                   },
                   "3": {
-                    "minBitrate": 11.0,
+                    "minBitrate": 11,
                     "bandOperationMode": "dual",
                     "bandSteeringEnabled": true
                   },
                   "4": {
-                    "minBitrate": 11.0,
+                    "minBitrate": 11,
                     "bandOperationMode": "dual",
                     "bandSteeringEnabled": true
                   },
                   "5": {
-                    "minBitrate": 11.0,
+                    "minBitrate": 11,
                     "bandOperationMode": "dual",
                     "bandSteeringEnabled": true
                   },
                   "6": {
-                    "minBitrate": 11.0,
+                    "minBitrate": 11,
                     "bandOperationMode": "dual",
                     "bandSteeringEnabled": true
                   },
                   "7": {
-                    "minBitrate": 11.0,
+                    "minBitrate": 11,
                     "bandOperationMode": "dual",
                     "bandSteeringEnabled": true
                   },
                   "8": {
-                    "minBitrate": 11.0,
+                    "minBitrate": 11,
                     "bandOperationMode": "dual",
                     "bandSteeringEnabled": true
                   },
                   "9": {
-                    "minBitrate": 11.0,
+                    "minBitrate": 11,
                     "bandOperationMode": "dual",
                     "bandSteeringEnabled": true
                   },
                   "10": {
-                    "minBitrate": 11.0,
+                    "minBitrate": 11,
                     "bandOperationMode": "dual",
                     "bandSteeringEnabled": true
                   },
                   "11": {
-                    "minBitrate": 11.0,
+                    "minBitrate": 11,
                     "bandOperationMode": "dual",
                     "bandSteeringEnabled": true
                   },
                   "12": {
-                    "minBitrate": 11.0,
+                    "minBitrate": 11,
                     "bandOperationMode": "dual",
                     "bandSteeringEnabled": true
                   },
                   "13": {
-                    "minBitrate": 11.0,
+                    "minBitrate": 11,
                     "bandOperationMode": "dual",
                     "bandSteeringEnabled": true
                   },
                   "14": {
-                    "minBitrate": 11.0,
+                    "minBitrate": 11,
                     "bandOperationMode": "dual",
                     "bandSteeringEnabled": true
                   }
@@ -51938,7 +52113,7 @@
                 "twoFourGhzSettings": {
                   "maxPower": 30,
                   "minPower": 5,
-                  "minBitrate": 11.0,
+                  "minBitrate": 11,
                   "validAutoChannels": [
                     1,
                     6,
@@ -52856,6 +53031,7 @@
                     "open-enhanced",
                     "psk",
                     "open-with-radius",
+                    "open-with-nac",
                     "8021x-meraki",
                     "8021x-nac",
                     "8021x-radius",
@@ -52864,7 +53040,7 @@
                     "ipsk-with-radius",
                     "ipsk-without-radius"
                   ],
-                  "description": "The association control method for the SSID ('open', 'open-enhanced', 'psk', 'open-with-radius', '8021x-meraki', '8021x-nac', '8021x-radius', '8021x-google', '8021x-localradius', 'ipsk-with-radius' or 'ipsk-without-radius')"
+                  "description": "The association control method for the SSID ('open', 'open-enhanced', 'psk', 'open-with-radius', 'open-with-nac', '8021x-meraki', '8021x-nac', '8021x-radius', '8021x-google', '8021x-localradius', 'ipsk-with-radius' or 'ipsk-without-radius')"
                 },
                 "enterpriseAdminAccess": {
                   "type": "string",
@@ -53937,9 +54113,7 @@
                   "description": "EAPOL Key settings."
                 }
               },
-              "example": {
-
-              }
+              "example": {}
             }
           }
         ],
@@ -54394,12 +54568,8 @@
                           "eapInnerAuthentication": [
                             "EAP-TTLS with MSCHAPv2"
                           ],
-                          "credentials": [
-
-                          ],
-                          "tunneledEapMethodCredentials": [
-
-                          ]
+                          "credentials": [],
+                          "tunneledEapMethodCredentials": []
                         }
                       }
                     ]
@@ -54608,9 +54778,7 @@
                             },
                             "authenticationTypes": {
                               "type": "object",
-                              "properties": {
-
-                              },
+                              "properties": {},
                               "description": "The authentication types for the method. These should be formatted as an object with the EAP method category in camelcase as the key and the list of types as the value (nonEapInnerAuthentication: Reserved, PAP, CHAP, MSCHAP, MSCHAPV2; eapInnerAuthentication: EAP-TLS, EAP-SIM, EAP-AKA, EAP-TTLS with MSCHAPv2; credentials: SIM, USIM, NFC Secure Element, Hardware Token, Softoken, Certificate, username/password, none, Reserved, Vendor Specific; tunneledEapMethodCredentials: SIM, USIM, NFC Secure Element, Hardware Token, Softoken, Certificate, username/password, Reserved, Anonymous, Vendor Specific)"
                             }
                           }
@@ -54664,12 +54832,8 @@
                           "eapInnerAuthentication": [
                             "EAP-TTLS with MSCHAPv2"
                           ],
-                          "credentials": [
-
-                          ],
-                          "tunneledEapMethodCredentials": [
-
-                          ]
+                          "credentials": [],
+                          "tunneledEapMethodCredentials": []
                         }
                       }
                     ]
@@ -54728,12 +54892,8 @@
                           "eapInnerAuthentication": [
                             "EAP-TTLS with MSCHAPv2"
                           ],
-                          "credentials": [
-
-                          ],
-                          "tunneledEapMethodCredentials": [
-
-                          ]
+                          "credentials": [],
+                          "tunneledEapMethodCredentials": []
                         }
                       }
                     ]
@@ -57457,13 +57617,9 @@
                       },
                       "body": {
                         "type": "object",
-                        "properties": {
-
-                        },
+                        "properties": {},
                         "description": "The body of the action",
-                        "default": {
-
-                        }
+                        "default": {}
                       }
                     },
                     "required": [
@@ -57476,21 +57632,11 @@
               },
               "example": {
                 "confirmed": true,
-                "synchronous": false,
+                "synchronous": true,
                 "actions": [
                   {
                     "resource": "/devices/QXXX-XXXX-XXXX/switch/ports/3",
-                    "operation": "update",
-                    "body": {
-                      "enabled": false
-                    }
-                  },
-                  {
-                    "resource": "/networks/L_XXXXX/groupPolicies",
-                    "operation": "create",
-                    "body": {
-                      "name": "Group 1"
-                    }
+                    "operation": "create"
                   }
                 ]
               },
@@ -57505,23 +57651,104 @@
           "201": {
             "description": "Successful operation",
             "schema": {
-              "type": "object"
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "ID of the action batch. Can be used to check the status of the action batch at /organizations/{organizationId}/actionBatches/{actionBatchId}"
+                },
+                "organizationId": {
+                  "type": "string",
+                  "description": "ID of the organization this action batch belongs to"
+                },
+                "confirmed": {
+                  "type": "boolean",
+                  "description": "Flag describing whether the action should be previewed before executing or not"
+                },
+                "synchronous": {
+                  "type": "boolean",
+                  "description": "Flag describing whether actions should run synchronously or asynchronously"
+                },
+                "status": {
+                  "type": "object",
+                  "properties": {
+                    "completed": {
+                      "type": "boolean",
+                      "description": "Flag describing whether all actions in the action batch have completed"
+                    },
+                    "failed": {
+                      "type": "boolean",
+                      "description": "Flag describing whether any actions in the action batch failed"
+                    },
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "List of errors encountered when running actions in the action batch"
+                    },
+                    "createdResources": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "description": "ID of the created resource"
+                          },
+                          "uri": {
+                            "type": "string",
+                            "description": "URI, not including base, of the created resource"
+                          }
+                        }
+                      },
+                      "description": "Resources created as a result of this action batch"
+                    }
+                  },
+                  "required": [
+                    "createdResources"
+                  ],
+                  "description": "Status of action batch"
+                },
+                "actions": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "resource": {
+                        "type": "string",
+                        "description": "Unique identifier for the resource to be acted on"
+                      },
+                      "operation": {
+                        "type": "string",
+                        "description": "The operation to be used by this action"
+                      }
+                    },
+                    "required": [
+                      "resource",
+                      "operation"
+                    ]
+                  },
+                  "description": "A set of changes made as part of this action (<a href='https://developer.cisco.com/meraki/api/#/rest/guides/action-batches/'>more details</a>)"
+                }
+              },
+              "required": [
+                "actions"
+              ]
             },
             "examples": {
               "application/json": {
-                "id": "123",
+                "id": "1234",
                 "organizationId": "2930418",
                 "confirmed": true,
                 "synchronous": false,
                 "status": {
                   "completed": true,
                   "failed": false,
-                  "errors": [
-
-                  ],
+                  "errors": [],
                   "createdResources": [
                     {
-                      "id": 100,
+                      "id": "1284392014819",
                       "uri": "/networks/L_XXXXX/groupPolicies/100"
                     }
                   ]
@@ -57529,17 +57756,7 @@
                 "actions": [
                   {
                     "resource": "/devices/QXXX-XXXX-XXXX/switch/ports/3",
-                    "operation": "update",
-                    "body": {
-                      "enabled": false
-                    }
-                  },
-                  {
-                    "resource": "/networks/L_XXXXX/groupPolicies",
-                    "operation": "create",
-                    "body": {
-                      "name": "Group 1"
-                    }
+                    "operation": "update"
                   }
                 ]
               }
@@ -57594,9 +57811,7 @@
                   "status": {
                     "completed": true,
                     "failed": false,
-                    "errors": [
-
-                    ],
+                    "errors": [],
                     "createdResources": [
                       {
                         "id": 100,
@@ -57716,12 +57931,8 @@
                 "status": {
                   "completed": false,
                   "failed": false,
-                  "errors": [
-
-                  ],
-                  "createdResources": [
-
-                  ]
+                  "errors": [],
+                  "createdResources": []
                 },
                 "actions": [
                   {
@@ -57771,23 +57982,104 @@
           "200": {
             "description": "Successful operation",
             "schema": {
-              "type": "object"
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "ID of the action batch. Can be used to check the status of the action batch at /organizations/{organizationId}/actionBatches/{actionBatchId}"
+                },
+                "organizationId": {
+                  "type": "string",
+                  "description": "ID of the organization this action batch belongs to"
+                },
+                "confirmed": {
+                  "type": "boolean",
+                  "description": "Flag describing whether the action should be previewed before executing or not"
+                },
+                "synchronous": {
+                  "type": "boolean",
+                  "description": "Flag describing whether actions should run synchronously or asynchronously"
+                },
+                "status": {
+                  "type": "object",
+                  "properties": {
+                    "completed": {
+                      "type": "boolean",
+                      "description": "Flag describing whether all actions in the action batch have completed"
+                    },
+                    "failed": {
+                      "type": "boolean",
+                      "description": "Flag describing whether any actions in the action batch failed"
+                    },
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "List of errors encountered when running actions in the action batch"
+                    },
+                    "createdResources": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "description": "ID of the created resource"
+                          },
+                          "uri": {
+                            "type": "string",
+                            "description": "URI, not including base, of the created resource"
+                          }
+                        }
+                      },
+                      "description": "Resources created as a result of this action batch"
+                    }
+                  },
+                  "required": [
+                    "createdResources"
+                  ],
+                  "description": "Status of action batch"
+                },
+                "actions": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "resource": {
+                        "type": "string",
+                        "description": "Unique identifier for the resource to be acted on"
+                      },
+                      "operation": {
+                        "type": "string",
+                        "description": "The operation to be used by this action"
+                      }
+                    },
+                    "required": [
+                      "resource",
+                      "operation"
+                    ]
+                  },
+                  "description": "A set of changes made as part of this action (<a href='https://developer.cisco.com/meraki/api/#/rest/guides/action-batches/'>more details</a>)"
+                }
+              },
+              "required": [
+                "actions"
+              ]
             },
             "examples": {
               "application/json": {
-                "id": "123",
+                "id": "1234",
                 "organizationId": "2930418",
                 "confirmed": true,
                 "synchronous": false,
                 "status": {
                   "completed": true,
                   "failed": false,
-                  "errors": [
-
-                  ],
+                  "errors": [],
                   "createdResources": [
                     {
-                      "id": 100,
+                      "id": "1284392014819",
                       "uri": "/networks/L_XXXXX/groupPolicies/100"
                     }
                   ]
@@ -57795,17 +58087,7 @@
                 "actions": [
                   {
                     "resource": "/devices/QXXX-XXXX-XXXX/switch/ports/3",
-                    "operation": "update",
-                    "body": {
-                      "enabled": false
-                    }
-                  },
-                  {
-                    "resource": "/networks/L_XXXXX/groupPolicies",
-                    "operation": "create",
-                    "body": {
-                      "name": "Group 1"
-                    }
+                    "operation": "update"
                   }
                 ]
               }
@@ -58285,9 +58567,7 @@
                     }
                   ],
                   "isDefaultGroup": false,
-                  "requiredIpMappings": [
-
-                  ],
+                  "requiredIpMappings": [],
                   "createdAt": "2019-06-27T21:34:25.253480Z",
                   "updatedAt": "2019-06-27T21:34:25.253480Z"
                 }
@@ -58360,9 +58640,7 @@
                   }
                 ],
                 "isDefaultGroup": false,
-                "requiredIpMappings": [
-
-                ]
+                "requiredIpMappings": []
               },
               "required": [
                 "name",
@@ -58391,9 +58669,7 @@
                   }
                 ],
                 "isDefaultGroup": false,
-                "requiredIpMappings": [
-
-                ],
+                "requiredIpMappings": [],
                 "createdAt": "2019-06-27T21:34:25.253480Z",
                 "updatedAt": "2019-06-27T21:34:25.253480Z"
               }
@@ -58446,9 +58722,7 @@
                   }
                 ],
                 "isDefaultGroup": false,
-                "requiredIpMappings": [
-
-                ],
+                "requiredIpMappings": [],
                 "createdAt": "2019-06-27T21:34:25.253480Z",
                 "updatedAt": "2019-06-27T21:34:25.253480Z"
               }
@@ -58526,9 +58800,7 @@
                   }
                 ],
                 "isDefaultGroup": false,
-                "requiredIpMappings": [
-
-                ]
+                "requiredIpMappings": []
               }
             }
           }
@@ -58552,9 +58824,7 @@
                   }
                 ],
                 "isDefaultGroup": false,
-                "requiredIpMappings": [
-
-                ],
+                "requiredIpMappings": [],
                 "createdAt": "2019-06-27T21:34:25.253480Z",
                 "updatedAt": "2019-06-27T21:34:25.253480Z"
               }
@@ -59375,12 +59645,6 @@
                       },
                       "access": {
                         "type": "string",
-                        "enum": [
-                          "full",
-                          "read-only",
-                          "guest-ambassador",
-                          "monitor-only"
-                        ],
                         "description": "The privilege of the dashboard administrator on the network. Can be one of 'full', 'read-only', 'guest-ambassador' or 'monitor-only'"
                       }
                     },
@@ -60873,14 +61137,14 @@
                           "senderUplink": "wan1",
                           "receiverUplink": "wan1",
                           "avgMos": 4.1,
-                          "minMos": 4.0,
+                          "minMos": 4,
                           "maxMos": 4.2
                         },
                         {
                           "senderUplink": "wan2",
                           "receiverUplink": "wan1",
                           "avgMos": 4.1,
-                          "minMos": 4.0,
+                          "minMos": 4,
                           "maxMos": 4.2
                         }
                       ]
@@ -60951,14 +61215,14 @@
                           "senderUplink": "wan1",
                           "receiverUplink": "wan1",
                           "avgMos": 4.1,
-                          "minMos": 4.0,
+                          "minMos": 4,
                           "maxMos": 4.2
                         },
                         {
                           "senderUplink": "wan1",
                           "receiverUplink": "wan2",
                           "avgMos": 4.1,
-                          "minMos": 4.0,
+                          "minMos": 4,
                           "maxMos": 4.2
                         }
                       ]
@@ -63100,9 +63364,7 @@
                   "description": "Note whether credentials were sent successfully"
                 }
               },
-              "example": {
-
-              }
+              "example": {}
             }
           }
         ],
@@ -63605,9 +63867,9 @@
               "application/json": {
                 "usage": {
                   "overall": {
-                    "total": 18000.0,
-                    "downstream": 10000.0,
-                    "upstream": 8000.0
+                    "total": 18000,
+                    "downstream": 10000,
+                    "upstream": 8000
                   },
                   "average": 1.37
                 },
@@ -64368,6 +64630,10 @@
                   "flexibleStackingEnabled": {
                     "type": "boolean",
                     "description": "For supported switches (e.g. MS420/MS425), whether or not the port has flexible stacking enabled."
+                  },
+                  "daiTrusted": {
+                    "type": "boolean",
+                    "description": "If true, ARP packets for this port will be considered trusted, and Dynamic ARP Inspection will allow the traffic."
                   }
                 }
               }
@@ -64409,7 +64675,8 @@
                   ],
                   "stickyMacAllowListLimit": 5,
                   "stormControlEnabled": true,
-                  "flexibleStackingEnabled": true
+                  "flexibleStackingEnabled": true,
+                  "daiTrusted": false
                 }
               ]
             }
@@ -64584,6 +64851,10 @@
                 "flexibleStackingEnabled": {
                   "type": "boolean",
                   "description": "For supported switches (e.g. MS420/MS425), whether or not the port has flexible stacking enabled."
+                },
+                "daiTrusted": {
+                  "type": "boolean",
+                  "description": "If true, ARP packets for this port will be considered trusted, and Dynamic ARP Inspection will allow the traffic."
                 }
               }
             },
@@ -64623,7 +64894,8 @@
                 ],
                 "stickyMacAllowListLimit": 5,
                 "stormControlEnabled": true,
-                "flexibleStackingEnabled": true
+                "flexibleStackingEnabled": true,
+                "daiTrusted": false
               }
             }
           }
@@ -64783,6 +65055,10 @@
                 "flexibleStackingEnabled": {
                   "type": "boolean",
                   "description": "For supported switches (e.g. MS420/MS425), whether or not the port has flexible stacking enabled."
+                },
+                "daiTrusted": {
+                  "type": "boolean",
+                  "description": "If true, ARP packets for this port will be considered trusted, and Dynamic ARP Inspection will allow the traffic."
                 }
               },
               "example": {
@@ -64815,7 +65091,8 @@
                 ],
                 "stickyMacAllowListLimit": 5,
                 "stormControlEnabled": true,
-                "flexibleStackingEnabled": true
+                "flexibleStackingEnabled": true,
+                "daiTrusted": false
               }
             }
           }
@@ -64949,6 +65226,10 @@
                 "flexibleStackingEnabled": {
                   "type": "boolean",
                   "description": "For supported switches (e.g. MS420/MS425), whether or not the port has flexible stacking enabled."
+                },
+                "daiTrusted": {
+                  "type": "boolean",
+                  "description": "If true, ARP packets for this port will be considered trusted, and Dynamic ARP Inspection will allow the traffic."
                 }
               }
             },
@@ -64988,7 +65269,8 @@
                 ],
                 "stickyMacAllowListLimit": 5,
                 "stormControlEnabled": true,
-                "flexibleStackingEnabled": true
+                "flexibleStackingEnabled": true,
+                "daiTrusted": false
               }
             }
           }
@@ -65897,9 +66179,7 @@
                 "secondaryDns": "8.8.4.4",
                 "productType": "wireless",
                 "components": {
-                  "powerSupplies": [
-
-                  ]
+                  "powerSupplies": []
                 },
                 "model": "MR34",
                 "tags": [
@@ -69547,6 +69827,526 @@
         ]
       }
     },
+    "/organizations/{organizationId}/licensing/coterm/licenses": {
+      "get": {
+        "description": "List the licenses in a coterm organization",
+        "operationId": "getOrganizationLicensingCotermLicenses",
+        "parameters": [
+          {
+            "name": "organizationId",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "type": "integer",
+            "name": "perPage",
+            "in": "query",
+            "description": "The number of entries per page returned. Acceptable range is 3 - 1000. Default is 1000."
+          },
+          {
+            "type": "string",
+            "name": "startingAfter",
+            "in": "query",
+            "description": "A token used by the server to indicate the start of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it."
+          },
+          {
+            "type": "string",
+            "name": "endingBefore",
+            "in": "query",
+            "description": "A token used by the server to indicate the end of the page. Often this is a timestamp or an ID but it is not limited to those. This parameter should not be defined by client applications. The link for the first, last, prev, or next page in the HTTP Link header should define it."
+          },
+          {
+            "type": "boolean",
+            "name": "invalidated",
+            "in": "query",
+            "description": "Filter for licenses that are invalidated"
+          },
+          {
+            "type": "boolean",
+            "name": "expired",
+            "in": "query",
+            "description": "Filter for licenses that are expired"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "key": {
+                    "type": "string",
+                    "description": "The key of the license"
+                  },
+                  "organizationId": {
+                    "type": "string",
+                    "description": "The ID of the organization that the license is claimed in"
+                  },
+                  "duration": {
+                    "type": "integer",
+                    "description": "The duration (term length) of the license, measured in days"
+                  },
+                  "mode": {
+                    "type": "string",
+                    "enum": [
+                      "addDevices",
+                      "renew"
+                    ],
+                    "description": "The operation mode of the license when it was claimed"
+                  },
+                  "startedAt": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "When the license's term began (approximately the date when the license was created)"
+                  },
+                  "claimedAt": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "When the license was claimed into the organization"
+                  },
+                  "invalidated": {
+                    "type": "boolean",
+                    "description": "Flag to indicated that the license is invalidated"
+                  },
+                  "invalidatedAt": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "When the license was invalidated. Will be null for active licenses"
+                  },
+                  "expired": {
+                    "type": "boolean",
+                    "description": "Flag to indicate if the license is expired"
+                  },
+                  "editions": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "edition": {
+                          "type": "string",
+                          "description": "The name of the license edition"
+                        },
+                        "productType": {
+                          "type": "string",
+                          "description": "The product type of the license edition"
+                        }
+                      }
+                    },
+                    "description": "The editions of the license for each relevant product type"
+                  },
+                  "counts": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "model": {
+                          "type": "string",
+                          "description": "The license model type"
+                        },
+                        "count": {
+                          "type": "integer",
+                          "description": "The number of counts the license contains of this model"
+                        }
+                      }
+                    },
+                    "description": "The counts of the license by model type"
+                  }
+                }
+              }
+            },
+            "headers": {
+              "Link": {
+                "type": "string",
+                "description": "A comma-separated list of first, last, prev, and next relative links used for subsequent paginated requests."
+              }
+            },
+            "examples": {
+              "application/json": [
+                {
+                  "key": "Z2AA-BBBB-CCCC",
+                  "organizationId": "123456",
+                  "duration": 365,
+                  "mode": "addDevices",
+                  "startedAt": "2022-05-02T10:52:00Z",
+                  "claimedAt": "2022-07-04T16:23:00Z",
+                  "invalidated": true,
+                  "invalidatedAt": "2022-07-04T16:23:00Z",
+                  "expired": false,
+                  "editions": [
+                    {
+                      "edition": "Enterprise",
+                      "productType": "appliance"
+                    }
+                  ],
+                  "counts": [
+                    {
+                      "model": "MR Enterprise",
+                      "count": 2
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "summary": "List the licenses in a coterm organization",
+        "tags": [
+          "organizations",
+          "configure",
+          "licensing",
+          "coterm",
+          "licenses"
+        ]
+      }
+    },
+    "/organizations/{organizationId}/licensing/coterm/licenses/move": {
+      "post": {
+        "description": "Moves a license to a different organization (coterm only)",
+        "operationId": "moveOrganizationLicensingCotermLicenses",
+        "parameters": [
+          {
+            "name": "organizationId",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "moveOrganizationLicensingCotermLicenses",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "destination": {
+                  "type": "object",
+                  "properties": {
+                    "organizationId": {
+                      "type": "string",
+                      "description": "The organization to move the license to"
+                    },
+                    "mode": {
+                      "type": "string",
+                      "enum": [
+                        "addDevices",
+                        "renew"
+                      ],
+                      "description": "The claim mode of the moved license"
+                    }
+                  },
+                  "description": "Destination data for the license move"
+                },
+                "licenses": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "key": {
+                        "type": "string",
+                        "description": "The license key to move counts from"
+                      },
+                      "counts": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "model": {
+                              "type": "string",
+                              "description": "The license model type to move counts of"
+                            },
+                            "count": {
+                              "type": "integer",
+                              "description": "The number of counts to move"
+                            }
+                          },
+                          "required": [
+                            "model",
+                            "count"
+                          ]
+                        },
+                        "description": "The counts to move from the license by model type"
+                      }
+                    },
+                    "required": [
+                      "key",
+                      "counts"
+                    ]
+                  },
+                  "description": "The list of licenses to move"
+                }
+              },
+              "example": {
+                "destination": {
+                  "organizationId": "123",
+                  "mode": "addDevices"
+                },
+                "licenses": [
+                  {
+                    "key": "Z2AA-BBBB-CCCC",
+                    "counts": [
+                      {
+                        "model": "MR Enterprise",
+                        "count": 5
+                      }
+                    ]
+                  }
+                ]
+              },
+              "required": [
+                "destination",
+                "licenses"
+              ]
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "remainderLicenses": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "key": {
+                        "type": "string",
+                        "description": "The key of the license"
+                      },
+                      "organizationId": {
+                        "type": "string",
+                        "description": "The ID of the organization that the license is claimed in"
+                      },
+                      "duration": {
+                        "type": "integer",
+                        "description": "The duration (term length) of the license, measured in days"
+                      },
+                      "mode": {
+                        "type": "string",
+                        "enum": [
+                          "addDevices",
+                          "renew"
+                        ],
+                        "description": "The operation mode of the license when it was claimed"
+                      },
+                      "startedAt": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "When the license's term began (approximately the date when the license was created)"
+                      },
+                      "claimedAt": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "When the license was claimed into the organization"
+                      },
+                      "invalidated": {
+                        "type": "boolean",
+                        "description": "Flag to indicated that the license is invalidated"
+                      },
+                      "invalidatedAt": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "When the license was invalidated. Will be null for active licenses"
+                      },
+                      "expired": {
+                        "type": "boolean",
+                        "description": "Flag to indicate if the license is expired"
+                      },
+                      "editions": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "edition": {
+                              "type": "string",
+                              "description": "The name of the license edition"
+                            },
+                            "productType": {
+                              "type": "string",
+                              "description": "The product type of the license edition"
+                            }
+                          }
+                        },
+                        "description": "The editions of the license for each relevant product type"
+                      },
+                      "counts": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "model": {
+                              "type": "string",
+                              "description": "The license model type"
+                            },
+                            "count": {
+                              "type": "integer",
+                              "description": "The number of counts the license contains of this model"
+                            }
+                          }
+                        },
+                        "description": "The counts of the license by model type"
+                      }
+                    }
+                  },
+                  "description": "Remainder licenses created in the source organization as a result of moving a subset of the counts of a license"
+                },
+                "movedLicenses": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "key": {
+                        "type": "string",
+                        "description": "The key of the license"
+                      },
+                      "organizationId": {
+                        "type": "string",
+                        "description": "The ID of the organization that the license is claimed in"
+                      },
+                      "duration": {
+                        "type": "integer",
+                        "description": "The duration (term length) of the license, measured in days"
+                      },
+                      "mode": {
+                        "type": "string",
+                        "enum": [
+                          "addDevices",
+                          "renew"
+                        ],
+                        "description": "The operation mode of the license when it was claimed"
+                      },
+                      "startedAt": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "When the license's term began (approximately the date when the license was created)"
+                      },
+                      "claimedAt": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "When the license was claimed into the organization"
+                      },
+                      "invalidated": {
+                        "type": "boolean",
+                        "description": "Flag to indicated that the license is invalidated"
+                      },
+                      "invalidatedAt": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "When the license was invalidated. Will be null for active licenses"
+                      },
+                      "expired": {
+                        "type": "boolean",
+                        "description": "Flag to indicate if the license is expired"
+                      },
+                      "editions": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "edition": {
+                              "type": "string",
+                              "description": "The name of the license edition"
+                            },
+                            "productType": {
+                              "type": "string",
+                              "description": "The product type of the license edition"
+                            }
+                          }
+                        },
+                        "description": "The editions of the license for each relevant product type"
+                      },
+                      "counts": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "model": {
+                              "type": "string",
+                              "description": "The license model type"
+                            },
+                            "count": {
+                              "type": "integer",
+                              "description": "The number of counts the license contains of this model"
+                            }
+                          }
+                        },
+                        "description": "The counts of the license by model type"
+                      }
+                    }
+                  },
+                  "description": "Newly moved licenses created in the destination organization of the license move operation"
+                }
+              }
+            },
+            "examples": {
+              "application/json": {
+                "remainderLicenses": [
+                  {
+                    "key": "Z2AA-BBBB-CCCC",
+                    "organizationId": "123456",
+                    "duration": 365,
+                    "mode": "addDevices",
+                    "startedAt": "2022-05-02T10:52:00Z",
+                    "claimedAt": "2022-07-04T16:23:00Z",
+                    "invalidated": true,
+                    "invalidatedAt": "2022-07-04T16:23:00Z",
+                    "expired": false,
+                    "editions": [
+                      {
+                        "edition": "Enterprise",
+                        "productType": "appliance"
+                      }
+                    ],
+                    "counts": [
+                      {
+                        "model": "MR Enterprise",
+                        "count": 2
+                      }
+                    ]
+                  }
+                ],
+                "movedLicenses": [
+                  {
+                    "key": "Z2AA-BBBB-CCCC",
+                    "organizationId": "123456",
+                    "duration": 365,
+                    "mode": "addDevices",
+                    "startedAt": "2022-05-02T10:52:00Z",
+                    "claimedAt": "2022-07-04T16:23:00Z",
+                    "invalidated": true,
+                    "invalidatedAt": "2022-07-04T16:23:00Z",
+                    "expired": false,
+                    "editions": [
+                      {
+                        "edition": "Enterprise",
+                        "productType": "appliance"
+                      }
+                    ],
+                    "counts": [
+                      {
+                        "model": "MR Enterprise",
+                        "count": 2
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "summary": "Moves a license to a different organization (coterm only)",
+        "tags": [
+          "organizations",
+          "configure",
+          "licensing",
+          "coterm",
+          "licenses"
+        ]
+      }
+    },
     "/organizations/{organizationId}/loginSecurity": {
       "get": {
         "description": "Returns the login security settings for an organization.",
@@ -70494,12 +71294,8 @@
                   "cidr": "10.0.0.0/24",
                   "created_at": "2018-05-12T00:00:00Z",
                   "updated_at": "2018-05-12T00:00:00Z",
-                  "groupIds": [
-
-                  ],
-                  "networkIds": [
-
-                  ]
+                  "groupIds": [],
+                  "networkIds": []
                 }
               ]
             }
@@ -70568,9 +71364,7 @@
                 "name": "Web Servers - Datacenter 10",
                 "category": "network",
                 "type": "cidr",
-                "groupIds": [
-
-                ]
+                "groupIds": []
               },
               "required": [
                 "name",
@@ -70596,12 +71390,8 @@
                 "cidr": "10.0.0.0/24",
                 "created_at": "2018-05-12T00:00:00Z",
                 "updated_at": "2018-05-12T00:00:00Z",
-                "groupIds": [
-
-                ],
-                "networkIds": [
-
-                ]
+                "groupIds": [],
+                "networkIds": []
               }
             }
           }
@@ -70667,12 +71457,8 @@
                   "category": "NetworkObjectGroup",
                   "created_at": "2018-05-12T00:00:00Z",
                   "updated_at": "2018-05-12T00:00:00Z",
-                  "objectIds": [
-
-                  ],
-                  "networkIds": [
-
-                  ]
+                  "objectIds": [],
+                  "networkIds": []
                 }
               ]
             }
@@ -70720,9 +71506,7 @@
               },
               "example": {
                 "name": "Web Servers - Datacenter 10",
-                "objectIds": [
-
-                ]
+                "objectIds": []
               },
               "required": [
                 "name"
@@ -70744,12 +71528,8 @@
                 "category": "NetworkObjectGroup",
                 "created_at": "2018-05-12T00:00:00Z",
                 "updated_at": "2018-05-12T00:00:00Z",
-                "objectIds": [
-
-                ],
-                "networkIds": [
-
-                ]
+                "objectIds": [],
+                "networkIds": []
               }
             }
           }
@@ -70794,12 +71574,8 @@
                 "category": "NetworkObjectGroup",
                 "created_at": "2018-05-12T00:00:00Z",
                 "updated_at": "2018-05-12T00:00:00Z",
-                "objectIds": [
-
-                ],
-                "networkIds": [
-
-                ]
+                "objectIds": [],
+                "networkIds": []
               }
             }
           }
@@ -70848,9 +71624,7 @@
               },
               "example": {
                 "name": "Web Servers - Datacenter 10",
-                "objectIds": [
-
-                ]
+                "objectIds": []
               }
             }
           }
@@ -70868,12 +71642,8 @@
                 "category": "NetworkObjectGroup",
                 "created_at": "2018-05-12T00:00:00Z",
                 "updated_at": "2018-05-12T00:00:00Z",
-                "objectIds": [
-
-                ],
-                "networkIds": [
-
-                ]
+                "objectIds": [],
+                "networkIds": []
               }
             }
           }
@@ -70950,12 +71720,8 @@
                 "cidr": "10.0.0.0/24",
                 "created_at": "2018-05-12T00:00:00Z",
                 "updated_at": "2018-05-12T00:00:00Z",
-                "groupIds": [
-
-                ],
-                "networkIds": [
-
-                ]
+                "groupIds": [],
+                "networkIds": []
               }
             }
           }
@@ -71020,9 +71786,7 @@
               "example": {
                 "name": "Web Servers - Datacenter 10",
                 "type": "cidr",
-                "groupIds": [
-
-                ]
+                "groupIds": []
               }
             }
           }
@@ -71042,12 +71806,8 @@
                 "cidr": "10.0.0.0/24",
                 "created_at": "2018-05-12T00:00:00Z",
                 "updated_at": "2018-05-12T00:00:00Z",
-                "groupIds": [
-
-                ],
-                "networkIds": [
-
-                ]
+                "groupIds": [],
+                "networkIds": []
               }
             }
           }
@@ -73074,9 +73834,9 @@
                     "id": "N_24329156"
                   },
                   "usage": {
-                    "total": 18000.0,
-                    "upstream": 8000.0,
-                    "downstream": 10000.0,
+                    "total": 18000,
+                    "upstream": 8000,
+                    "downstream": 10000,
                     "percentage": 80.2
                   }
                 }
@@ -73188,9 +73948,9 @@
                     }
                   },
                   "usage": {
-                    "total": 9000.0,
-                    "upstream": 1000.0,
-                    "downstream": 8000.0
+                    "total": 9000,
+                    "upstream": 1000,
+                    "downstream": 8000
                   }
                 }
               ]
@@ -73426,8 +74186,8 @@
                   "model": "MR34",
                   "count": 2,
                   "usage": {
-                    "total": 2000.0,
-                    "average": 1000.0
+                    "total": 2000,
+                    "average": 1000
                   }
                 }
               ]
@@ -73539,9 +74299,9 @@
                 {
                   "name": "My SSID",
                   "usage": {
-                    "total": 18000.0,
-                    "downstream": 10000.0,
-                    "upstream": 8000.0,
+                    "total": 18000,
+                    "downstream": 10000,
+                    "upstream": 8000,
                     "percentage": 80.223456789
                   },
                   "clients": {
@@ -74252,6 +75012,37 @@
         ]
       }
     },
+    "/organizations/{organizationId}/users/{userId}": {
+      "delete": {
+        "description": "Delete a user and all of its authentication methods.",
+        "operationId": "deleteOrganizationUser",
+        "parameters": [
+          {
+            "name": "organizationId",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "userId",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful operation"
+          }
+        },
+        "summary": "Delete a user and all of its authentication methods.",
+        "tags": [
+          "organizations",
+          "configure",
+          "users"
+        ]
+      }
+    },
     "/organizations/{organizationId}/webhookLogs": {
       "get": {
         "description": "Return the log of webhook POSTs sent",
@@ -74395,9 +75186,7 @@
                   "alertId": "0000000000000000",
                   "alertLevel": "warning",
                   "occurredAt": "2018-02-11T00:00:00.123450Z",
-                  "alertData": {
-
-                  },
+                  "alertData": {},
                   "organizationId": "2930418",
                   "organizationName": "My organization",
                   "organizationUrl": "https://dashboard.meraki.com/o/VjjsAd/manage/organization/overview",
@@ -74975,6 +75764,9 @@
       "name": "contentFiltering"
     },
     {
+      "name": "coterm"
+    },
+    {
       "name": "current"
     },
     {
@@ -75120,6 +75912,9 @@
     },
     {
       "name": "licenses"
+    },
+    {
+      "name": "licensing"
     },
     {
       "name": "linkAggregations"
@@ -75772,6 +76567,12 @@
       "operation": "update"
     },
     {
+      "group": "End user",
+      "summary": "Delete a user and all of its authentication methods.",
+      "resource": "/organizations/{organizationId}/users/{userId}",
+      "operation": "destroy"
+    },
+    {
       "group": "Feature opt in",
       "summary": "Update an early access feature opt-in for an organization",
       "resource": "/organizations/{organizationId}/earlyAccess/features/optIns/{optInId}",
@@ -76364,6 +77165,12 @@
       "summary": "Update the storm control configuration for a switch network",
       "resource": "/networks/{networkId}/switch/stormControl",
       "operation": "update"
+    },
+    {
+      "group": "Switch",
+      "summary": "Update switch network settings",
+      "resource": "/networks/{networkId}/switch/settings",
+      "operation": "settings/update"
     },
     {
       "group": "Switch",
