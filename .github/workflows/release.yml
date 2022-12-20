@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Download latest OpenAPI spec
-      run: curl -L -o spec2.json https://example.com/latest_openapi_spec.json
+      run: curl -L -o spec2.json https://api.meraki.com/api/v1/openapiSpec
     - name: Get latest tag
       run: |
         git config --local user.email "cguynn@gmail.com"
