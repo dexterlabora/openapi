@@ -18,16 +18,27 @@ jobs:
         echo "Latest tag: $latest_tag"
     - name: Determine next semantic minor version
       run: |
-        git config --local user.email "cguynn@gmail.com"
-        git config --local user.name "dexterlabora"
         # Split the latest tag into major, minor, and patch versions
         IFS='.' read -ra versions <<< "$latest_tag"
+        versions=($latest_tag)
         major=${versions[0]}
         minor=${versions[1]}
         patch=${versions[2]}
-        echo "$major"
-        echo "$minor"
-        echo "$patch" 
+        # Increment the minor version and reset the patch version to 0
+        minor=$((minor+1))
+        patch=0
+        # Concatenate the major, minor, and patch versions to form the new version string
+        new_version="$major.$minor.$patch"
+        echo "Next semantic minor version: $new_version, old versions $versions "
+    - name: Update spec file version
+      run: jq --arg version "$new_version" '.info.version = $version' spec2.json > tmp.json && mv tmp.json spec2.json
+    - name: Commit changes
+      run: git add spec2.json && git commit -m "Update OpenAPI spec to version $new_version"
+    - name: Create tag
+      run: git tag -a "$new_version" -m "Release $new_version"
+    - name: Push changes
+      run: |
+        git push origin master --tags
         # Increment the minor version and reset the patch version to 0
         minor=$((minor+1))
         patch=0
