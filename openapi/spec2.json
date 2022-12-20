@@ -35,7 +35,7 @@
   "paths": {
     "/administered/identities/me": {
       "get": {
-        "description": "Returns the identity of the current user.",
+        "description": "Returns the identity of the current user. ",
         "operationId": "getAdministeredIdentitiesMe",
         "responses": {
           "200": {
