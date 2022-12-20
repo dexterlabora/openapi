@@ -1,0 +1,41 @@
+name: Meraki API OpenAPI Update
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  update_openapi_spec:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Download latest OpenAPI spec
+      run: curl -L -o spec2.json https://api.meraki.com/api/v1/openapiSpec
+    - name: Get latest tag
+      run: |
+        latest_tag=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" "https://api.github.com/repos/${{ github.repository }}/tags" | jq '.[0].name' -r)
+        echo "Latest tag: $latest_tag"
+    - name: Determine next semantic minor version
+      run: |
+        git config --local user.email "cguynn@gmail.com"
+        git config --local user.name "dexterlabora"
+        # Split the latest tag into major, minor, and patch versions
+        IFS='.' read -ra versions <<< "$latest_tag"
+        major=${versions[0]}
+        minor=${versions[1]}
+        patch=${versions[2]}
+        # Increment the minor version and reset the patch version to 0
+        minor=$((minor+1))
+        patch=0
+        # Concatenate the major, minor, and patch versions to form the new version string
+        new_version="$major.$minor.$patch"
+        echo "Next semantic minor version: $new_version"
+    - name: Update spec file version
+      run: jq --arg version "$new_version" '.info.version = $version' spec2.json > tmp.json && mv tmp.json spec2.json
+    - name: Commit changes
+      run: git add spec2.json && git commit -m "Update OpenAPI spec to version $new_version"
+    - name: Create tag
+      run: git tag -a "$new_version" -m "Release $new_version"
+    - name: Push changes
+      run: git push origin master --tags
