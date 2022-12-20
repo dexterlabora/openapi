@@ -9,7 +9,7 @@ on:
     branches:
       - master
     paths:
-      - './openapi/spec2.json'
+      - /openapi/spec2.json
 
 jobs:
   update_openapi_spec:
