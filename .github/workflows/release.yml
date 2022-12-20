@@ -33,9 +33,9 @@ jobs:
         # Concatenate the major, minor, and patch versions to form the new version string
         new_version="$major.$minor.$patch"
         echo "Next semantic minor version: $new_version"
-        jq --arg version "$new_version" '.info.version = $version' spec2.json > tmp.json && mv tmp.json /openapi/spec2.json
+        jq --arg version "$new_version" '.info.version = $version' spec2.json > tmp.json && mv tmp.json spec2.json
         # Commit changes
-        git add * && git commit -m "Update OpenAPI spec to version $new_version"
+        git add ./openapi/spec2.json && git commit -m "Update OpenAPI spec to version $new_version"
         # Create tag
         git tag -a "$new_version" -m "Release $new_version"
     - name: Push changes
