@@ -24,7 +24,7 @@ jobs:
         echo "Latest tag: $latest_tag"
         # Split the latest tag into major, minor, and patch versions
         IFS='.' read -ra versions <<< "$latest_tag"
-        major=${versions[0]#?} #removes the letter v from the version number
+        major=${versions[0]}
         minor=${versions[1]}
         patch=${versions[2]}
         # Increment the minor version and reset the patch version to 0
