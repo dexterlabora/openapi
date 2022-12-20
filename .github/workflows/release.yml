@@ -8,6 +8,8 @@ on:
   push:
     branches:
       - master
+    paths:
+      - 'spec2.json'
 
 jobs:
   update_openapi_spec:
