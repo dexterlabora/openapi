@@ -43,6 +43,8 @@ jobs:
         # Create tag
         git tag -a "$new_version" -m "Release $new_version"
         
-        gh release create "$new_version"
+        
     - name: Push changes
       run: git push origin master --tags
+    - name: Create Release
+      run: gh release create "$new_version"
