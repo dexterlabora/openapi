@@ -19,6 +19,8 @@ jobs:
     - name: Download latest OpenAPI spec
       run: curl -L -o spec2.json https://api.meraki.com/api/v1/openapiSpec
     - name: Get latest tag
+      env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         git config --local user.email "cguynn@gmail.com"
         git config --local user.name "dexterlabora"
@@ -40,6 +42,7 @@ jobs:
         git add ./openapi/spec2.json && git commit -m "Update OpenAPI spec to version $new_version"
         # Create tag
         git tag -a "$new_version" -m "Release $new_version"
+        
         gh release create "$new_version"
     - name: Push changes
       run: git push origin master --tags
