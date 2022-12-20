@@ -21,7 +21,8 @@ jobs:
         git config --local user.email "cguynn@gmail.com"
         git config --local user.name "dexterlabora"
         # Split the latest tag into major, minor, and patch versions
-        IFS='.' read -ra versions <<< "$latest_tag"
+        IFS='.' 
+        read -ra versions <<< "$latest_tag"
         major=${versions[0]}
         minor=${versions[1]}
         patch=${versions[2]}
