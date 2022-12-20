@@ -1,5 +1,9 @@
 name: Meraki API OpenAPI Update
 
+defaults:
+  run:
+    working-directory: '/'
+    
 on:
   push:
     branches:
@@ -33,6 +37,6 @@ jobs:
     - name: Commit changes
       run: git add spec2.json && git commit -m "Update OpenAPI spec to version $new_version"
     - name: Create tag
-      run: git tag -a "$new_version" -m "Release $new_version"
+      run: git tag -a "v$new_version" -m "Release $new_version"
     - name: Push changes
       run: git push origin master --tags
