@@ -52,4 +52,4 @@ jobs:
         git push origin master --tags
 
         # Create Release
-        run: gh release create "$new_version"
+        gh release create "$new_version"
