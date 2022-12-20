@@ -21,8 +21,7 @@ jobs:
         git config --local user.email "cguynn@gmail.com"
         git config --local user.name "dexterlabora"
         # Split the latest tag into major, minor, and patch versions
-        IFS='.' 
-        read -ra versions <<< "$latest_tag"
+        IFS='.' read -ra versions <<< "$latest_tag"
         major=${versions[0]}
         minor=${versions[1]}
         patch=${versions[2]}
@@ -34,7 +33,7 @@ jobs:
         patch=0
         # Concatenate the major, minor, and patch versions to form the new version string
         new_version="$major.$minor.$patch"
-        echo "Next semantic minor version: $new_version, old $major $minor "
+        echo "Next semantic minor version: $new_version, old versions $versions "
     - name: Update spec file version
       run: jq --arg version "$new_version" '.info.version = $version' spec2.json > tmp.json && mv tmp.json spec2.json
     - name: Commit changes
